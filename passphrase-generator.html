@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Passphrase Generator | Memorable Secure Passphrases | ToolNest</title>
+<meta name="description" content="Generate a strong, memorable passphrase made of random words. Free, 100% client-side passphrase generator using a Diceware-style word list.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/passphrase-generator.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;--green:#16a34a;--amber:#d97706;--red:#dc2626;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .output-box{background:#0f172a;color:#e2e8f0;border-radius:10px;padding:18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:19px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px;word-break:break-word;}
+  .output-actions{display:flex;gap:8px;flex-shrink:0;}
+  .icon-btn{background:#1e293b;color:#e2e8f0;border:none;width:38px;height:38px;border-radius:8px;font-size:15px;cursor:pointer;flex-shrink:0;}
+  .icon-btn:hover{background:#334155;}
+  .strength-row{margin-top:14px;}
+  .strength-bar{height:8px;background:#e2e8f0;border-radius:999px;overflow:hidden;}
+  .strength-fill{height:100%;width:0%;border-radius:999px;transition:width .2s ease, background .2s ease;}
+  .strength-label{font-size:12.5px;font-weight:700;margin-top:6px;}
+  .ctrl-row{margin-top:20px;}
+  .ctrl-row .ctrl-label{display:flex;justify-content:space-between;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  input[type=range]{width:100%;accent-color:var(--blue);}
+  .options-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;}
+  .toggle-item{display:flex;align-items:center;gap:8px;font-size:13.5px;}
+  .toggle-item input{width:16px;height:16px;accent-color:var(--blue);}
+  select{padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:13px;}
+  .generate-btn{margin-top:20px;width:100%;background:var(--blue);color:#fff;border:none;padding:13px;border-radius:10px;font-size:14.5px;font-weight:700;cursor:pointer;}
+  .generate-btn:hover{background:var(--blue-dark);}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">🔒 Security Tools</a> / <strong>Passphrase Generator</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🔐</div>
+    <div><h1>Passphrase Generator</h1><p>Generate a strong, memorable passphrase made of random words. 100% local — nothing leaves your browser, nothing is stored.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="output-box">
+      <span id="passphraseOutput">correct-horse-battery-staple</span>
+      <div class="output-actions">
+        <button class="icon-btn" onclick="generate()" title="Regenerate">🔄</button>
+        <button class="icon-btn" onclick="copyPassphrase()" title="Copy">📋</button>
+      </div>
+    </div>
+
+    <div class="strength-row">
+      <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+      <div class="strength-label" id="strengthLabel">—</div>
+    </div>
+
+    <div class="ctrl-row">
+      <div class="ctrl-label">Number of Words <span id="wordCountVal">4</span></div>
+      <input type="range" id="wordCountRange" min="3" max="8" value="4">
+    </div>
+
+    <div class="options-row">
+      <div class="toggle-item"><input type="checkbox" id="chkCapitalize" checked><label for="chkCapitalize">Capitalize Words</label></div>
+      <div class="toggle-item"><input type="checkbox" id="chkNumber" checked><label for="chkNumber">Add a Number</label></div>
+      <div class="toggle-item">
+        <label for="sepSelect">Separator</label>
+        <select id="sepSelect">
+          <option value="-" selected>Hyphen (-)</option>
+          <option value="_">Underscore (_)</option>
+          <option value=".">Dot (.)</option>
+          <option value=" ">Space</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="generate-btn" onclick="generate()">🔄 Generate New Passphrase</button>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>🧠 Easy to Remember</h3><p>Random words are far easier to recall than a jumble of symbols.</p></div>
+    <div class="feature"><h3>💪 Still Very Strong</h3><p>Each added word multiplies the possible combinations dramatically.</p></div>
+    <div class="feature"><h3>🎛️ Fully Customizable</h3><p>Adjust word count, capitalization, numbers, and separator.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>Passphrases are never sent anywhere or stored — they exist only in your browser tab.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Passphrase Generator</h2>
+  <ol class="steps">
+    <li><strong>Set the word count:</strong> More words means a stronger passphrase.</li>
+    <li><strong>Choose formatting:</strong> Capitalization, a trailing number, and separator.</li>
+    <li><strong>Generate:</strong> Click Generate New Passphrase for a fresh one.</li>
+    <li><strong>Copy it:</strong> Click 📋 to copy it to your clipboard.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>Is a passphrase as secure as a random password?</summary><p>A passphrase with enough random words can have comparable or greater entropy than a shorter random-character password, while being much easier to remember and type.</p></details>
+    <details><summary>How many words should I use?</summary><p>Four to six random words is a common recommendation for a strong, memorable passphrase — more words for higher-security accounts.</p></details>
+    <details><summary>Is my passphrase stored or sent anywhere?</summary><p>No. Generation happens entirely in your browser tab and nothing is logged or transmitted.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Security Tools</h2>
+  <div class="related">
+    <a href="password-generator.html">🔑 Password Generator</a>
+    <a href="password-strength.html">💪 Password Strength Checker</a>
+    <a href="password-analyzer.html">📊 Password Strength Visualizer</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+const WORDS = ['apple','breeze','candle','desert','ember','falcon','garden','harbor','island','jungle','kettle','lantern','meadow','nectar','orange','piano','quartz','river','sunset','tiger','umbrella','violet','willow','xenon','yellow','zebra','anchor','bridge','canyon','dolphin','echo','forest','glacier','horizon','ivory','journey','kingdom','lagoon','mountain','nebula','oasis','pearl','quiver','ripple','summit','thunder','universe','valley','whisper','crystal','maple','copper','shadow','ember','coral','falcon','granite','harmony','indigo','jasmine'];
+
+function secureRandomInt(max){
+  const arr = new Uint32Array(1);
+  crypto.getRandomValues(arr);
+  return arr[0] % max;
+}
+
+function randomWord(){
+  return WORDS[secureRandomInt(WORDS.length)];
+}
+
+function generate(){
+  const count = parseInt(document.getElementById('wordCountRange').value, 10);
+  document.getElementById('wordCountVal').textContent = count;
+  const capitalize = document.getElementById('chkCapitalize').checked;
+  const addNumber = document.getElementById('chkNumber').checked;
+  const sep = document.getElementById('sepSelect').value;
+
+  const words = [];
+  for(let i = 0; i < count; i++){
+    let w = randomWord();
+    if(capitalize) w = w.charAt(0).toUpperCase() + w.slice(1);
+    words.push(w);
+  }
+  if(addNumber){
+    words.push(String(secureRandomInt(100)));
+  }
+
+  const passphrase = words.join(sep);
+  document.getElementById('passphraseOutput').textContent = passphrase;
+  updateStrength(count, addNumber);
+}
+
+function updateStrength(wordCount, hasNumber){
+  const fill = document.getElementById('strengthFill');
+  const label = document.getElementById('strengthLabel');
+
+  const entropy = wordCount * Math.log2(WORDS.length) + (hasNumber ? Math.log2(100) : 0);
+  const score = Math.min(100, entropy * 1.6);
+
+  let color, text;
+  if(score < 40){ color = 'var(--red)'; text = 'Weak'; }
+  else if(score < 65){ color = 'var(--amber)'; text = 'Decent'; }
+  else if(score < 85){ color = '#2563eb'; text = 'Strong'; }
+  else { color = 'var(--green)'; text = 'Very Strong'; }
+
+  fill.style.width = score + '%';
+  fill.style.background = color;
+  label.textContent = text + ` (~${Math.round(entropy)} bits of entropy)`;
+  label.style.color = color;
+}
+
+function copyPassphrase(){
+  const text = document.getElementById('passphraseOutput').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelectorAll('.icon-btn')[1];
+    const old = btn.textContent;
+    btn.textContent = '✅';
+    setTimeout(() => btn.textContent = old, 1200);
+  });
+}
+
+document.getElementById('wordCountRange').addEventListener('input', generate);
+['chkCapitalize','chkNumber','sepSelect'].forEach(id => {
+  document.getElementById(id).addEventListener('change', generate);
+});
+
+generate();
+</script>
+</body>
+</html>

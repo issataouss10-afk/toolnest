@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aspect Ratio Calculator | Calculate Image & Video Dimensions | ToolNest</title>
+<meta name="description" content="Calculate proportional width or height for any aspect ratio instantly, with common video and image presets. Free, 100% client-side.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/aspect-ratio-calculator.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .preset-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+  .preset-tabs button{border:1px solid var(--line);background:#f8fafc;color:var(--muted);padding:8px 14px;border-radius:999px;font-size:12.5px;font-weight:600;cursor:pointer;}
+  .preset-tabs button.active{background:var(--blue);border-color:var(--blue);color:#fff;}
+  .grid2{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:end;}
+  @media (max-width:600px){.grid2{grid-template-columns:1fr;}}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  input[type=number]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);}
+  input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .ratio-sep{font-size:20px;color:var(--muted);text-align:center;padding-bottom:11px;}
+  .divider{display:flex;align-items:center;gap:12px;margin:20px 0;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em;}
+  .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--line);}
+  .grid3{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;}
+  @media (max-width:600px){.grid3{grid-template-columns:1fr 1fr;}}
+  .result-box{margin-top:18px;background:#0f172a;color:#e2e8f0;border-radius:10px;padding:16px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:16px;font-weight:700;text-align:center;}
+  .preview-box{margin-top:18px;background:#f8fafc;border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;padding:20px;min-height:120px;}
+  .preview-rect{background:var(--blue);border-radius:6px;max-width:100%;max-height:160px;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">🖼️ Image &amp; Design Tools</a> / <strong>Aspect Ratio Calculator</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">📐</div>
+    <div><h1>Aspect Ratio Calculator</h1><p>Calculate the proportional width or height for any aspect ratio instantly. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="preset-tabs">
+      <button onclick="setPreset(16,9)">16:9</button>
+      <button onclick="setPreset(9,16)">9:16</button>
+      <button onclick="setPreset(4,3)">4:3</button>
+      <button onclick="setPreset(1,1)">1:1</button>
+      <button onclick="setPreset(21,9)">21:9</button>
+      <button onclick="setPreset(3,2)">3:2</button>
+    </div>
+
+    <div class="grid2">
+      <div class="field"><label>Ratio Width</label><input type="number" id="ratioW" value="16"></div>
+      <div class="ratio-sep">:</div>
+      <div class="field"><label>Ratio Height</label><input type="number" id="ratioH" value="9"></div>
+    </div>
+
+    <div class="divider">Calculate Dimensions</div>
+
+    <div class="grid3">
+      <div class="field"><label>Width (px)</label><input type="number" id="widthInput" value="1920" oninput="calcFromWidth()"></div>
+      <div class="field"><label>Height (px)</label><input type="number" id="heightInput" value="1080" oninput="calcFromHeight()"></div>
+    </div>
+
+    <div class="result-box" id="resultBox">1920 × 1080 = 16:9</div>
+    <div class="preview-box"><div class="preview-rect" id="previewRect" style="width:200px;height:112px;"></div></div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Instant Calculation</h3><p>Enter either dimension and the other updates to keep the exact ratio.</p></div>
+    <div class="feature"><h3>🎬 Common Presets</h3><p>Quick access to standard video, photo, and social media ratios.</p></div>
+    <div class="feature"><h3>👀 Visual Preview</h3><p>See the proportions rendered as a scaled rectangle.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All calculation happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Aspect Ratio Calculator</h2>
+  <ol class="steps">
+    <li><strong>Pick a ratio:</strong> Use a preset or enter a custom width:height ratio.</li>
+    <li><strong>Enter one dimension:</strong> Type either the width or height in pixels.</li>
+    <li><strong>Read the result:</strong> The other dimension updates automatically to match the ratio.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>What's the difference between 16:9 and 9:16?</summary><p>16:9 is the standard widescreen format for video and displays, while 9:16 is the vertical version used for phone screens and social media stories/reels.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. All calculation happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Image &amp; Design Tools</h2>
+  <div class="related">
+    <a href="image-resizer.html">🖼️ Image Resizer</a>
+    <a href="gradient-generator.html">🌈 CSS Gradient Generator</a>
+    <a href="palette-generator.html">🎨 Color Palette Generator</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+function gcd(a, b){ return b === 0 ? a : gcd(b, a % b); }
+
+function setPreset(w, h){
+  document.getElementById('ratioW').value = w;
+  document.getElementById('ratioH').value = h;
+  calcFromWidth();
+}
+
+function updatePreview(w, h){
+  const maxDim = 220;
+  let pw, ph;
+  if(w >= h){ pw = maxDim; ph = maxDim * (h/w); }
+  else { ph = maxDim; pw = maxDim * (w/h); }
+  const rect = document.getElementById('previewRect');
+  rect.style.width = pw + 'px';
+  rect.style.height = ph + 'px';
+}
+
+function updateResult(width, height, ratioW, ratioH){
+  const g = gcd(Math.round(ratioW), Math.round(ratioH)) || 1;
+  const simplifiedW = Math.round(ratioW / g);
+  const simplifiedH = Math.round(ratioH / g);
+  document.getElementById('resultBox').textContent = `${Math.round(width)} × ${Math.round(height)} = ${simplifiedW}:${simplifiedH}`;
+  updatePreview(ratioW, ratioH);
+}
+
+function calcFromWidth(){
+  const ratioW = parseFloat(document.getElementById('ratioW').value);
+  const ratioH = parseFloat(document.getElementById('ratioH').value);
+  const width = parseFloat(document.getElementById('widthInput').value);
+  if(isNaN(ratioW) || isNaN(ratioH) || isNaN(width) || ratioW <= 0) return;
+  const height = width * (ratioH / ratioW);
+  document.getElementById('heightInput').value = Math.round(height);
+  updateResult(width, height, ratioW, ratioH);
+}
+
+function calcFromHeight(){
+  const ratioW = parseFloat(document.getElementById('ratioW').value);
+  const ratioH = parseFloat(document.getElementById('ratioH').value);
+  const height = parseFloat(document.getElementById('heightInput').value);
+  if(isNaN(ratioW) || isNaN(ratioH) || isNaN(height) || ratioH <= 0) return;
+  const width = height * (ratioW / ratioH);
+  document.getElementById('widthInput').value = Math.round(width);
+  updateResult(width, height, ratioW, ratioH);
+}
+
+document.getElementById('ratioW').addEventListener('input', calcFromWidth);
+document.getElementById('ratioH').addEventListener('input', calcFromWidth);
+calcFromWidth();
+</script>
+</body>
+</html>

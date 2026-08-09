@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Calculator | EMI & Monthly Payment Calculator | ToolNest</title>
+<meta name="description" content="Calculate your monthly loan payment, total interest, and payment schedule instantly. Free, 100% client-side loan/EMI calculator.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/loan-calculator.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  @media (max-width:640px){.grid3{grid-template-columns:1fr;}}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  input[type=number]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);}
+  input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .result-hero{margin-top:22px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border-radius:14px;padding:26px;text-align:center;}
+  .result-hero .big-num{font-size:36px;font-weight:800;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .result-hero .sub{font-size:13px;opacity:.85;margin-top:6px;}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;}
+  @media (max-width:640px){.stats-grid{grid-template-columns:1fr;}}
+  .stat-card{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center;}
+  .stat-card .num{font-size:18px;font-weight:800;color:var(--blue);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .stat-card .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:700;margin-top:4px;}
+  .note{font-size:12px;color:var(--muted);margin-top:16px;background:#fffbeb;border:1px solid #fde68a;padding:10px 14px;border-radius:8px;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">⚡ Productivity Tools</a> / <strong>Loan Calculator</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🏦</div>
+    <div><h1>Loan Calculator</h1><p>Calculate your monthly payment (EMI), total interest, and total cost instantly. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="grid3">
+      <div class="field"><label for="principalInput">Loan Amount</label><input type="number" id="principalInput" value="20000"></div>
+      <div class="field"><label for="rateInput">Annual Interest Rate (%)</label><input type="number" id="rateInput" value="6.5" step="0.01"></div>
+      <div class="field"><label for="termInput">Loan Term (years)</label><input type="number" id="termInput" value="5"></div>
+    </div>
+
+    <div class="result-hero">
+      <div class="big-num" id="monthlyPayment">$392.14</div>
+      <div class="sub">Estimated Monthly Payment</div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card"><div class="num" id="totalPayment">$0</div><div class="label">Total Payment</div></div>
+      <div class="stat-card"><div class="num" id="totalInterest">$0</div><div class="label">Total Interest</div></div>
+      <div class="stat-card"><div class="num" id="numPayments">0</div><div class="label">Number of Payments</div></div>
+    </div>
+
+    <div class="note">ℹ️ This is an estimate based on a standard fixed-rate amortized loan. Actual terms, fees, and rates from a lender may differ — this isn't financial advice.</div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Instant Calculation</h3><p>Your monthly payment updates live as you adjust any field.</p></div>
+    <div class="feature"><h3>📊 Full Breakdown</h3><p>See total payment and total interest over the life of the loan.</p></div>
+    <div class="feature"><h3>🎯 Works for Any Loan Type</h3><p>Use it for mortgages, auto loans, personal loans, or student loans.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All calculation happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Loan Calculator</h2>
+  <ol class="steps">
+    <li><strong>Enter the loan amount:</strong> The total principal you're borrowing.</li>
+    <li><strong>Enter the interest rate:</strong> The annual percentage rate.</li>
+    <li><strong>Enter the term:</strong> How many years to repay the loan.</li>
+    <li><strong>Read the results:</strong> Monthly payment, total payment, and total interest.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>How is the monthly payment calculated?</summary><p>It uses the standard amortization formula for a fixed-rate loan, based on the principal, monthly interest rate, and total number of payments.</p></details>
+    <details><summary>Does this include fees or taxes?</summary><p>No, this is a simplified estimate of principal and interest only — actual loans may include origination fees, insurance, or taxes not reflected here.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. All calculation happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Productivity Tools</h2>
+  <div class="related">
+    <a href="percentage-calculator.html">💯 Percentage Calculator</a>
+    <a href="tip-calculator.html">🧾 Tip Calculator</a>
+    <a href="unit-converter.html">📐 Unit Converter</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+function calculate(){
+  const principal = parseFloat(document.getElementById('principalInput').value);
+  const annualRate = parseFloat(document.getElementById('rateInput').value);
+  const years = parseFloat(document.getElementById('termInput').value);
+
+  if(isNaN(principal) || isNaN(annualRate) || isNaN(years) || principal <= 0 || years <= 0) return;
+
+  const monthlyRate = (annualRate / 100) / 12;
+  const numPayments = Math.round(years * 12);
+
+  let monthlyPayment;
+  if(monthlyRate === 0){
+    monthlyPayment = principal / numPayments;
+  } else {
+    monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
+  }
+
+  const totalPayment = monthlyPayment * numPayments;
+  const totalInterest = totalPayment - principal;
+
+  document.getElementById('monthlyPayment').textContent = '$' + monthlyPayment.toFixed(2);
+  document.getElementById('totalPayment').textContent = '$' + totalPayment.toFixed(2);
+  document.getElementById('totalInterest').textContent = '$' + totalInterest.toFixed(2);
+  document.getElementById('numPayments').textContent = numPayments;
+}
+
+['principalInput','rateInput','termInput'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calculate);
+});
+calculate();
+</script>
+</body>
+</html>

@@ -333,4 +333,36 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- Newest Batch Added -->
+    <url>
+        <loc>https://toolnest-jet.vercel.app/line-sorter.html</loc>
+        <lastmod>2026-08-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://toolnest-jet.vercel.app/discount-calculator.html</loc>
+        <lastmod>2026-08-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://toolnest-jet.vercel.app/html-table-generator.html</loc>
+        <lastmod>2026-08-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://toolnest-jet.vercel.app/html-to-markdown.html</loc>
+        <lastmod>2026-08-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://toolnest-jet.vercel.app/neumorphism-generator.html</loc>
+        <lastmod>2026-08-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

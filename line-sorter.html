@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duplicate Line Remover & Text Sorter | ToolNest</title>
+<meta name="description" content="Remove duplicate lines, sort text alphabetically, and trim whitespace instantly. Free, 100% client-side line remover and sorter.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/line-sorter.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media (max-width:780px){.split{grid-template-columns:1fr;}}
+  .pane-label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  textarea{width:100%;min-height:260px;padding:14px;border:1px solid var(--line);border-radius:10px;font-size:13.5px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);resize:vertical;}
+  textarea:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .options-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:16px;}
+  .toggle-item{display:flex;align-items:center;gap:8px;font-size:13.5px;}
+  .toggle-item input{width:16px;height:16px;accent-color:var(--blue);}
+  select{padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:13px;}
+  .stat-note{font-size:12.5px;color:var(--muted);margin-top:10px;}
+  .output-actions{display:flex;justify-content:flex-end;margin-top:12px;}
+  .copy-btn{background:var(--blue);color:#fff;border:none;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;}
+  .copy-btn:hover{background:var(--blue-dark);}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">⚡ Productivity Tools</a> / <strong>Duplicate Line Remover &amp; Text Sorter</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🧹</div>
+    <div><h1>Duplicate Line Remover &amp; Text Sorter</h1><p>Remove duplicate lines, sort alphabetically, and trim whitespace instantly. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="split">
+      <div>
+        <div class="pane-label">Input</div>
+        <textarea id="textInput">banana
+apple
+banana
+cherry
+apple
+date</textarea>
+      </div>
+      <div>
+        <div class="pane-label">Output</div>
+        <textarea id="textOutput" readonly></textarea>
+      </div>
+    </div>
+
+    <div class="options-row">
+      <div class="toggle-item"><input type="checkbox" id="chkDedupe" checked><label for="chkDedupe">Remove duplicate lines</label></div>
+      <div class="toggle-item"><input type="checkbox" id="chkTrim" checked><label for="chkTrim">Trim whitespace</label></div>
+      <div class="toggle-item"><input type="checkbox" id="chkEmpty" checked><label for="chkEmpty">Remove empty lines</label></div>
+      <div class="toggle-item"><input type="checkbox" id="chkCase"><label for="chkCase">Case-insensitive dedupe</label></div>
+      <div class="toggle-item">
+        <label for="sortSelect">Sort</label>
+        <select id="sortSelect">
+          <option value="none" selected>No sorting</option>
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="stat-note" id="statNote"></div>
+    <div class="output-actions">
+      <button class="copy-btn" onclick="copyOutput()">📋 Copy Output</button>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Live Processing</h3><p>The output updates instantly as you edit the text or options.</p></div>
+    <div class="feature"><h3>🧹 Multiple Cleanups</h3><p>Remove duplicates, trim whitespace, and drop empty lines all at once.</p></div>
+    <div class="feature"><h3>🔤 A-Z Sorting</h3><p>Sort lines alphabetically ascending or descending.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All processing happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Duplicate Line Remover</h2>
+  <ol class="steps">
+    <li><strong>Paste your text:</strong> Add a list of lines to clean up.</li>
+    <li><strong>Choose options:</strong> Dedupe, trim, remove empty lines, and case sensitivity.</li>
+    <li><strong>Sort if needed:</strong> Pick A→Z or Z→A ordering.</li>
+    <li><strong>Copy the result:</strong> Click Copy Output to grab the cleaned list.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>Does case-insensitive dedupe change the letter casing?</summary><p>No, it only affects which lines are considered duplicates — the first occurrence's original casing is kept in the output.</p></details>
+    <details><summary>Is my text sent to a server?</summary><p>No. All processing happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Productivity Tools</h2>
+  <div class="related">
+    <a href="word-counter.html">📝 Word & Character Counter</a>
+    <a href="case-converter.html">🔤 Case Converter</a>
+    <a href="text-diff.html">🔍 Text Diff Checker</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+function process(){
+  const raw = document.getElementById('textInput').value;
+  let lines = raw.split('\n');
+
+  if(document.getElementById('chkTrim').checked){
+    lines = lines.map(l => l.trim());
+  }
+  if(document.getElementById('chkEmpty').checked){
+    lines = lines.filter(l => l.trim() !== '');
+  }
+
+  const originalCount = lines.length;
+
+  if(document.getElementById('chkDedupe').checked){
+    const seen = new Set();
+    const caseInsensitive = document.getElementById('chkCase').checked;
+    lines = lines.filter(l => {
+      const key = caseInsensitive ? l.toLowerCase() : l;
+      if(seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
+
+  const sortMode = document.getElementById('sortSelect').value;
+  if(sortMode === 'az'){
+    lines = [...lines].sort((a,b) => a.localeCompare(b));
+  } else if(sortMode === 'za'){
+    lines = [...lines].sort((a,b) => b.localeCompare(a));
+  }
+
+  document.getElementById('textOutput').value = lines.join('\n');
+  document.getElementById('statNote').textContent = `${originalCount} lines in → ${lines.length} lines out (${originalCount - lines.length} removed)`;
+}
+
+document.querySelectorAll('#textInput, input[type=checkbox], #sortSelect').forEach(el => {
+  el.addEventListener('input', process);
+});
+
+function copyOutput(){
+  const text = document.getElementById('textOutput').value;
+  if(!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    const old = btn.textContent;
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = old, 1200);
+  });
+}
+
+process();
+</script>
+</body>
+</html>

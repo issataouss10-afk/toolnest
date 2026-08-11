@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image to Base64 Converter | Encode Images Online | ToolNest</title>
+<meta name="description" content="Convert any image to a Base64 data URI instantly, ready to embed in HTML or CSS. Free, 100% client-side image to Base64 converter.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/image-to-base64.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .dropzone{border:2px dashed var(--line);border-radius:12px;padding:40px 20px;text-align:center;cursor:pointer;background:#f8fafc;transition:.15s;}
+  .dropzone:hover, .dropzone.dragover{border-color:var(--blue);background:#eef2ff;}
+  .dropzone .dz-icon{font-size:32px;margin-bottom:8px;}
+  .dropzone .dz-text{font-size:14px;color:var(--muted);} .dropzone .dz-text strong{color:var(--blue);}
+  #fileInput{display:none;}
+  .editor{display:none;margin-top:20px;} .editor.active{display:block;}
+  .preview-stage{background:#f8fafc;border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;justify-content:center;min-height:160px;padding:16px;}
+  .preview-stage img{max-width:100%;max-height:220px;border-radius:6px;}
+  .meta-note{font-size:12.5px;color:var(--muted);margin-top:10px;text-align:center;}
+  .tabs{display:flex;gap:8px;margin-top:18px;}
+  .tabs button{border:1px solid var(--line);background:#f8fafc;color:var(--muted);padding:8px 16px;border-radius:999px;font-size:12.5px;font-weight:600;cursor:pointer;}
+  .tabs button.active{background:var(--blue);border-color:var(--blue);color:#fff;}
+  .output-box{margin-top:14px;background:#0f172a;color:#e2e8f0;border-radius:10px;padding:14px 16px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;word-break:break-all;max-height:220px;overflow-y:auto;}
+  .output-actions{display:flex;justify-content:flex-end;margin-top:12px;gap:8px;}
+  .copy-btn{background:var(--blue);color:#fff;border:none;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;}
+  .copy-btn:hover{background:var(--blue-dark);}
+  .reset-btn{background:#f1f5f9;color:var(--ink);border:1px solid var(--line);padding:9px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">🔁 File &amp; Format Converters</a> / <strong>Image to Base64 Converter</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🖼️</div>
+    <div><h1>Image to Base64 Converter</h1><p>Convert any image to a Base64 data URI, ready to embed in HTML or CSS. 100% local — your image is never uploaded anywhere.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="dropzone" id="dropzone">
+      <div class="dz-icon">🖼️</div>
+      <div class="dz-text"><strong>Click to upload</strong> or drag and drop an image</div>
+      <input type="file" id="fileInput" accept="image/*">
+    </div>
+
+    <div class="editor" id="editor">
+      <div class="preview-stage"><img id="previewImg" alt="Preview"></div>
+      <div class="meta-note" id="metaNote"></div>
+
+      <div class="tabs">
+        <button class="active" data-mode="datauri" onclick="setMode('datauri')">Data URI</button>
+        <button data-mode="css" onclick="setMode('css')">CSS background</button>
+        <button data-mode="html" onclick="setMode('html')">HTML img tag</button>
+      </div>
+
+      <div class="output-box" id="outputBox"></div>
+      <div class="output-actions">
+        <button class="reset-btn" onclick="resetTool()">Start Over</button>
+        <button class="copy-btn" onclick="copyOutput()">📋 Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Instant Encoding</h3><p>The Base64 string is generated the moment you upload an image.</p></div>
+    <div class="feature"><h3>📋 Multiple Output Formats</h3><p>Get a raw data URI, ready-to-use CSS, or an HTML img tag.</p></div>
+    <div class="feature"><h3>📦 Any Image Type</h3><p>Works with PNG, JPEG, WebP, GIF, and SVG files.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>Your image never leaves your device — nothing is uploaded to any server.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Image to Base64 Converter</h2>
+  <ol class="steps">
+    <li><strong>Upload an image:</strong> Click the dropzone or drag and drop a file.</li>
+    <li><strong>Pick an output format:</strong> Raw data URI, CSS background, or HTML tag.</li>
+    <li><strong>Copy the result:</strong> Click Copy and paste it into your code.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>When should I embed an image as Base64?</summary><p>It's useful for small icons or images where you want to avoid an extra HTTP request, such as inline SVGs or tiny UI assets — large images are usually better served as regular files.</p></details>
+    <details><summary>Is my image uploaded anywhere?</summary><p>No. The encoding happens entirely in your browser using the FileReader API — your image never leaves your device.</p></details>
+  </div>
+
+  <h2 class="section-title">Related File &amp; Format Converters</h2>
+  <div class="related">
+    <a href="base64-converter.html">🔤 Base64 Encoder / Decoder</a>
+    <a href="image-resizer.html">🖼️ Image Resizer</a>
+    <a href="favicon-generator.html">🔖 Favicon Generator</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+let dataUri = '';
+let currentMode = 'datauri';
+const dropzone = document.getElementById('dropzone');
+const fileInput = document.getElementById('fileInput');
+const editor = document.getElementById('editor');
+
+dropzone.addEventListener('click', () => fileInput.click());
+dropzone.addEventListener('dragover', e => { e.preventDefault(); dropzone.classList.add('dragover'); });
+dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+dropzone.addEventListener('drop', e => {
+  e.preventDefault(); dropzone.classList.remove('dragover');
+  if(e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+});
+fileInput.addEventListener('change', () => { if(fileInput.files.length) handleFile(fileInput.files[0]); });
+
+function handleFile(file){
+  if(!file.type.startsWith('image/')) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    dataUri = e.target.result;
+    document.getElementById('previewImg').src = dataUri;
+    document.getElementById('metaNote').textContent = `${file.name} — ${(file.size/1024).toFixed(1)} KB — Base64 size: ${(dataUri.length/1024).toFixed(1)} KB`;
+    editor.classList.add('active');
+    renderOutput();
+  };
+  reader.readAsDataURL(file);
+}
+
+function setMode(m){
+  currentMode = m;
+  document.querySelectorAll('.tabs button').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
+  renderOutput();
+}
+
+function renderOutput(){
+  const box = document.getElementById('outputBox');
+  if(currentMode === 'datauri'){
+    box.textContent = dataUri;
+  } else if(currentMode === 'css'){
+    box.textContent = `background-image: url("${dataUri}");`;
+  } else {
+    box.textContent = `<img src="${dataUri}" alt="">`;
+  }
+}
+
+function copyOutput(){
+  const text = document.getElementById('outputBox').textContent;
+  if(!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    const old = btn.textContent;
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = old, 1200);
+  });
+}
+
+function resetTool(){
+  dataUri = '';
+  editor.classList.remove('active');
+  fileInput.value = '';
+}
+</script>
+</body>
+</html>

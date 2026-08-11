@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emoji Picker & Search | Find and Copy Emoji | ToolNest</title>
+<meta name="description" content="Search and copy any emoji instantly, organized by category. Free, 100% client-side emoji picker.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/emoji-picker.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  input[type=text]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px;color:var(--ink);}
+  input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .cat-tabs{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap;}
+  .cat-tabs button{border:1px solid var(--line);background:#f8fafc;color:var(--muted);padding:7px 14px;border-radius:999px;font-size:12.5px;font-weight:600;cursor:pointer;}
+  .cat-tabs button.active{background:var(--blue);border-color:var(--blue);color:#fff;}
+  .emoji-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(52px, 1fr));gap:8px;margin-top:18px;max-height:400px;overflow-y:auto;}
+  .emoji-btn{
+    font-size:26px;background:#f8fafc;border:1px solid var(--line);border-radius:10px;
+    padding:8px;cursor:pointer;position:relative;aspect-ratio:1;display:flex;align-items:center;justify-content:center;
+  }
+  .emoji-btn:hover{background:#eef2ff;}
+  .emoji-btn.flashed::after{
+    content:'✓';position:absolute;inset:0;background:rgba(37,99,235,.9);color:#fff;
+    display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:18px;
+  }
+  .empty-note{color:var(--muted);font-size:13px;padding:20px;text-align:center;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">⚡ Productivity Tools</a> / <strong>Emoji Picker &amp; Search</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">😀</div>
+    <div><h1>Emoji Picker &amp; Search</h1><p>Search and copy any emoji instantly, organized by category. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <input type="text" id="searchInput" placeholder="🔍 Search emoji by name (e.g. 'heart', 'fire', 'cat')...">
+
+    <div class="cat-tabs" id="catTabs"></div>
+    <div class="emoji-grid" id="emojiGrid"></div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Instant Search</h3><p>Type a keyword and matching emoji appear immediately across all categories.</p></div>
+    <div class="feature"><h3>📂 Organized by Category</h3><p>Browse faces, animals, food, objects, symbols, and more.</p></div>
+    <div class="feature"><h3>📋 One-Click Copy</h3><p>Click any emoji to copy it straight to your clipboard.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>Everything runs in your browser. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Emoji Picker</h2>
+  <ol class="steps">
+    <li><strong>Search or browse:</strong> Type a keyword, or pick a category tab.</li>
+    <li><strong>Click an emoji:</strong> It copies to your clipboard instantly.</li>
+    <li><strong>Paste it:</strong> Paste into your message, post, or document.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>Will emoji look the same on every device?</summary><p>The emoji character itself is universal, but its exact appearance varies by platform (iOS, Android, Windows) since each renders emoji with its own design.</p></details>
+    <details><summary>Is my search sent to a server?</summary><p>No. Searching and copying happen entirely in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Productivity Tools</h2>
+  <div class="related">
+    <a href="invisible-text.html">👻 Invisible Character Generator</a>
+    <a href="word-counter.html">📝 Word & Character Counter</a>
+    <a href="social-counter.html">📱 Social Media Character Counter</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+const EMOJI_DATA = {
+  Faces: [['😀','grinning face'],['😂','joy laugh'],['😍','heart eyes love'],['😎','cool sunglasses'],['😢','crying sad'],['😡','angry mad'],['🤔','thinking'],['😴','sleeping tired'],['🥳','party celebrate'],['😱','shocked scream'],['🙄','eye roll'],['😇','angel innocent']],
+  Gestures: [['👍','thumbs up like'],['👎','thumbs down dislike'],['👏','clap applause'],['🙌','hands up celebrate'],['🤝','handshake deal'],['✌️','peace victory'],['🤞','fingers crossed luck'],['👋','wave hello'],['💪','muscle strong'],['🙏','pray thanks please']],
+  Hearts: [['❤️','red heart love'],['💔','broken heart'],['💕','two hearts'],['💖','sparkling heart'],['💛','yellow heart'],['💙','blue heart'],['💚','green heart'],['🧡','orange heart'],['💜','purple heart']],
+  Animals: [['🐶','dog puppy'],['🐱','cat kitten'],['🦁','lion'],['🐼','panda'],['🐸','frog'],['🦊','fox'],['🐧','penguin'],['🐢','turtle'],['🦄','unicorn'],['🐝','bee']],
+  Food: [['🍕','pizza'],['🍔','burger'],['🍎','apple'],['🍩','donut'],['☕','coffee'],['🍰','cake'],['🍜','noodles ramen'],['🍦','ice cream'],['🍇','grapes'],['🥑','avocado']],
+  Objects: [['💻','laptop computer'],['📱','phone mobile'],['📚','books'],['✏️','pencil'],['🔑','key'],['💡','lightbulb idea'],['🎁','gift present'],['⏰','alarm clock'],['📷','camera'],['🎧','headphones']],
+  Symbols: [['🔥','fire hot lit'],['⭐','star'],['✨','sparkles'],['✅','check mark done'],['❌','cross wrong'],['⚡','lightning bolt fast'],['💯','hundred perfect'],['🎉','party popper celebrate'],['🚀','rocket launch'],['⚠️','warning caution']],
+};
+
+const categories = Object.keys(EMOJI_DATA);
+let activeCat = categories[0];
+
+function renderTabs(){
+  const tabs = document.getElementById('catTabs');
+  tabs.innerHTML = categories.map(c => `<button class="${c === activeCat ? 'active' : ''}" onclick="selectCat('${c}')">${c}</button>`).join('');
+}
+
+function selectCat(c){
+  activeCat = c;
+  document.getElementById('searchInput').value = '';
+  renderTabs();
+  renderGrid();
+}
+
+function renderGrid(){
+  const query = document.getElementById('searchInput').value.trim().toLowerCase();
+  const grid = document.getElementById('emojiGrid');
+
+  let items = [];
+  if(query){
+    categories.forEach(c => {
+      EMOJI_DATA[c].forEach(([emoji, keywords]) => {
+        if(keywords.includes(query)) items.push(emoji);
+      });
+    });
+  } else {
+    items = EMOJI_DATA[activeCat].map(([emoji]) => emoji);
+  }
+
+  if(items.length === 0){
+    grid.innerHTML = '<div class="empty-note">No matching emoji found.</div>';
+    return;
+  }
+
+  grid.innerHTML = items.map(e => `<button class="emoji-btn" onclick="copyEmoji(this, '${e}')">${e}</button>`).join('');
+}
+
+function copyEmoji(el, emoji){
+  navigator.clipboard.writeText(emoji).then(() => {
+    el.classList.add('flashed');
+    setTimeout(() => el.classList.remove('flashed'), 700);
+  });
+}
+
+document.getElementById('searchInput').addEventListener('input', renderGrid);
+
+renderTabs();
+renderGrid();
+</script>
+</body>
+</html>

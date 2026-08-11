@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASCII Art Generator | Text to ASCII Banner | ToolNest</title>
+<meta name="description" content="Turn any text into ASCII art banners instantly, perfect for terminal splash screens and README headers. Free, 100% client-side.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/ascii-art-generator.html">
+<meta name="theme-color" content="#2563eb">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/figlet.js/1.5.2/figlet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/figlet.js/1.5.2/fonts/Standard.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/figlet.js/1.5.2/fonts/Slant.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/figlet.js/1.5.2/fonts/Big.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/figlet.js/1.5.2/fonts/Ghost.js"></script>
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:600px){.grid2{grid-template-columns:1fr;}}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  input[type=text]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;color:var(--ink);}
+  select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;color:var(--ink);background:#fff;}
+  input:focus, select:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .output-box{margin-top:18px;background:#0f172a;color:#e2e8f0;border-radius:10px;padding:16px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;line-height:1.3;white-space:pre;overflow-x:auto;min-height:140px;}
+  .output-actions{display:flex;justify-content:flex-end;margin-top:12px;}
+  .copy-btn{background:var(--blue);color:#fff;border:none;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;}
+  .copy-btn:hover{background:var(--blue-dark);}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">Developer Tools</a> / <strong>ASCII Art Generator</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🔤</div>
+    <div><h1>ASCII Art Generator</h1><p>Turn any text into an ASCII banner, perfect for terminal splash screens and README headers. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="grid2">
+      <div class="field">
+        <label for="textInput">Text</label>
+        <input type="text" id="textInput" value="ToolNest" maxlength="30">
+      </div>
+      <div class="field">
+        <label for="fontSelect">Font</label>
+        <select id="fontSelect">
+          <option value="Standard" selected>Standard</option>
+          <option value="Slant">Slant</option>
+          <option value="Big">Big</option>
+          <option value="Ghost">Ghost</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="output-box" id="asciiOutput"></div>
+    <div class="output-actions">
+      <button class="copy-btn" onclick="copyOutput()">📋 Copy ASCII Art</button>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Instant Rendering</h3><p>The ASCII art updates live as you type or change the font.</p></div>
+    <div class="feature"><h3>🔤 Multiple Fonts</h3><p>Choose from several classic ASCII banner styles.</p></div>
+    <div class="feature"><h3>📋 One-Click Copy</h3><p>Copy the result straight into a terminal script, README, or comment.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All rendering happens in your browser. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest ASCII Art Generator</h2>
+  <ol class="steps">
+    <li><strong>Type your text:</strong> Short words or names work best.</li>
+    <li><strong>Pick a font:</strong> Try different styles to find the look you want.</li>
+    <li><strong>Copy it:</strong> Click Copy ASCII Art and paste it into your project.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>What is ASCII art commonly used for?</summary><p>It's often used for terminal splash screens, CLI tool banners, README headers, and code comments as a fun, plain-text way to add visual flair.</p></details>
+    <details><summary>Is my text sent to a server?</summary><p>No. The ASCII art is rendered entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Developer Utilities</h2>
+  <div class="related">
+    <a href="html-table-generator.html">🔳 HTML Table Generator</a>
+    <a href="xml-formatter.html">📄 XML Formatter</a>
+    <a href="uuid-generator.html">🆔 UUID Generator</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+function render(){
+  const text = document.getElementById('textInput').value || ' ';
+  const font = document.getElementById('fontSelect').value;
+  try{
+    figlet.text(text, { font: font }, (err, data) => {
+      document.getElementById('asciiOutput').textContent = err ? 'Could not render this font.' : data;
+    });
+  } catch(e){
+    document.getElementById('asciiOutput').textContent = 'Could not render ASCII art.';
+  }
+}
+
+document.getElementById('textInput').addEventListener('input', render);
+document.getElementById('fontSelect').addEventListener('change', render);
+
+function copyOutput(){
+  const text = document.getElementById('asciiOutput').textContent;
+  if(!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    const old = btn.textContent;
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = old, 1200);
+  });
+}
+
+window.addEventListener('load', render);
+</script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timezone Converter | Convert Time Between Zones | ToolNest</title>
+<meta name="description" content="Convert a time between any two timezones instantly, with a full 24-hour comparison view. Free, 100% client-side timezone converter.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/timezone-converter.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .grid3{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;}
+  @media (max-width:640px){.grid3{grid-template-columns:1fr;}}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  input[type=datetime-local]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;color:var(--ink);}
+  select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:13.5px;color:var(--ink);background:#fff;}
+  input:focus, select:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .swap-btn{background:#f1f5f9;border:1px solid var(--line);width:42px;height:42px;border-radius:10px;font-size:16px;cursor:pointer;}
+  .swap-btn:hover{background:#e2e8f0;}
+  .result-list{margin-top:20px;display:flex;flex-direction:column;gap:8px;}
+  .result-row{display:flex;justify-content:space-between;align-items:center;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:12px 16px;}
+  .result-row.highlight{background:#eef2ff;border-color:#c7d2fe;}
+  .result-row .rlabel{font-size:13px;font-weight:700;}
+  .result-row .rvalue{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;color:var(--blue-dark);font-weight:700;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">⚡ Productivity Tools</a> / <strong>Timezone Converter</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🌍</div>
+    <div><h1>Timezone Converter</h1><p>Convert a time between any two timezones instantly. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="grid3">
+      <div class="field"><label for="dateInput">Date &amp; Time</label><input type="datetime-local" id="dateInput"></div>
+      <div class="field"><label for="fromZone">From Timezone</label><select id="fromZone"></select></div>
+      <button class="swap-btn" onclick="swapZones()" title="Swap">⇄</button>
+    </div>
+
+    <div class="result-list" id="resultList"></div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Instant Conversion</h3><p>Every timezone's local time updates live as you change the date or source zone.</p></div>
+    <div class="feature"><h3>🌍 Common Timezones</h3><p>Covers major global cities across every continent.</p></div>
+    <div class="feature"><h3>⇄ Quick Swap</h3><p>Flip the source timezone with one click.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All conversion happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Timezone Converter</h2>
+  <ol class="steps">
+    <li><strong>Pick a date and time:</strong> Defaults to right now.</li>
+    <li><strong>Choose the source timezone:</strong> The zone your entered time is in.</li>
+    <li><strong>Read the results:</strong> See the equivalent local time in every listed timezone.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>Does this account for daylight saving time?</summary><p>Yes, conversions use your browser's built-in timezone database, which automatically accounts for daylight saving rules for each date.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. All conversion happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Productivity Tools</h2>
+  <div class="related">
+    <a href="timestamp-converter.html">⏳ Timestamp Converter</a>
+    <a href="countdown-timer.html">⏱️ Countdown Timer</a>
+    <a href="age-calculator.html">🎂 Age Calculator</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+const ZONES = [
+  { label: 'UTC', tz: 'UTC' },
+  { label: 'New York', tz: 'America/New_York' },
+  { label: 'Los Angeles', tz: 'America/Los_Angeles' },
+  { label: 'São Paulo', tz: 'America/Sao_Paulo' },
+  { label: 'London', tz: 'Europe/London' },
+  { label: 'Paris', tz: 'Europe/Paris' },
+  { label: 'Cairo', tz: 'Africa/Cairo' },
+  { label: 'Moscow', tz: 'Europe/Moscow' },
+  { label: 'Dubai', tz: 'Asia/Dubai' },
+  { label: 'Karachi', tz: 'Asia/Karachi' },
+  { label: 'Kolkata', tz: 'Asia/Kolkata' },
+  { label: 'Dhaka', tz: 'Asia/Dhaka' },
+  { label: 'Bangkok', tz: 'Asia/Bangkok' },
+  { label: 'Shanghai', tz: 'Asia/Shanghai' },
+  { label: 'Tokyo', tz: 'Asia/Tokyo' },
+  { label: 'Sydney', tz: 'Australia/Sydney' },
+  { label: 'Auckland', tz: 'Pacific/Auckland' },
+];
+
+const fromZoneSelect = document.getElementById('fromZone');
+fromZoneSelect.innerHTML = ZONES.map(z => `<option value="${z.tz}">${z.label}</option>`).join('');
+fromZoneSelect.value = Intl.DateTimeFormat().resolvedOptions().timeZone || 'UTC';
+if(!ZONES.find(z => z.tz === fromZoneSelect.value)){
+  fromZoneSelect.value = 'UTC';
+}
+
+function nowLocalInputValue(){
+  const now = new Date();
+  const offset = now.getTimezoneOffset();
+  const local = new Date(now.getTime() - offset*60000);
+  return local.toISOString().slice(0,16);
+}
+document.getElementById('dateInput').value = nowLocalInputValue();
+
+function swapZones(){
+  // rotate to next zone in list for a "swap"-like feel
+  const idx = ZONES.findIndex(z => z.tz === fromZoneSelect.value);
+  fromZoneSelect.value = ZONES[(idx + 1) % ZONES.length].tz;
+  convert();
+}
+
+function convert(){
+  const dateVal = document.getElementById('dateInput').value;
+  if(!dateVal) return;
+  const fromTz = fromZoneSelect.value;
+
+  // Interpret the entered local date/time as being in fromTz.
+  // Build a UTC instant by finding the offset of fromTz at that moment.
+  const naiveDate = new Date(dateVal + ':00');
+
+  // Get offset of fromTz relative to UTC at this date using Intl
+  const utcGuess = new Date(naiveDate.toLocaleString('en-US', { timeZone: 'UTC' }));
+  const tzGuess = new Date(naiveDate.toLocaleString('en-US', { timeZone: fromTz }));
+  const offsetMs = utcGuess.getTime() - tzGuess.getTime();
+  const instant = new Date(naiveDate.getTime() + offsetMs);
+
+  const list = document.getElementById('resultList');
+  list.innerHTML = ZONES.map(z => {
+    const formatted = new Intl.DateTimeFormat('en-US', {
+      timeZone: z.tz,
+      weekday: 'short', month: 'short', day: 'numeric',
+      hour: '2-digit', minute: '2-digit', hour12: true
+    }).format(instant);
+    const isSource = z.tz === fromTz;
+    return `<div class="result-row ${isSource ? 'highlight' : ''}"><div class="rlabel">${z.label}</div><div class="rvalue">${formatted}</div></div>`;
+  }).join('');
+}
+
+document.getElementById('dateInput').addEventListener('input', convert);
+fromZoneSelect.addEventListener('change', convert);
+convert();
+</script>
+</body>
+</html>

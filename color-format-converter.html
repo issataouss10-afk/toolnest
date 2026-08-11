@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Format Converter | HEX, RGB, HSL & CMYK | ToolNest</title>
+<meta name="description" content="Convert any color between HEX, RGB, HSL, and CMYK instantly, with a live preview. Free, 100% client-side color format converter.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/color-format-converter.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .top-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+  input[type=color]{width:52px;height:44px;border:1px solid var(--line);border-radius:10px;padding:2px;background:#fff;cursor:pointer;}
+  .swatch-preview{width:52px;height:44px;border-radius:10px;border:1px solid var(--line);}
+  .result-list{margin-top:20px;display:flex;flex-direction:column;gap:10px;}
+  .result-row{display:flex;justify-content:space-between;align-items:center;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:12px 16px;gap:10px;}
+  .result-row .rlabel{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;min-width:60px;}
+  .result-row input[type=text]{flex:1;border:none;background:transparent;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;color:var(--ink);outline:none;}
+  .copy-small{background:var(--blue);color:#fff;border:none;padding:7px 12px;border-radius:8px;font-size:11.5px;font-weight:700;cursor:pointer;flex-shrink:0;}
+  .copy-small:hover{background:var(--blue-dark);}
+  .error{color:#dc2626;font-size:13px;margin-top:8px;min-height:16px;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">🖼️ Image &amp; Design Tools</a> / <strong>Color Format Converter</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🎨</div>
+    <div><h1>Color Format Converter</h1><p>Convert any color between HEX, RGB, HSL, and CMYK instantly. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="top-row">
+      <input type="color" id="colorPicker" value="#2563eb">
+      <div class="swatch-preview" id="swatchPreview" style="background:#2563eb;"></div>
+    </div>
+    <div class="error" id="errorMsg"></div>
+
+    <div class="result-list">
+      <div class="result-row"><span class="rlabel">HEX</span><input type="text" id="hexField" value="#2563EB"><button class="copy-small" onclick="copyField('hexField')">Copy</button></div>
+      <div class="result-row"><span class="rlabel">RGB</span><input type="text" id="rgbField" readonly><button class="copy-small" onclick="copyField('rgbField')">Copy</button></div>
+      <div class="result-row"><span class="rlabel">HSL</span><input type="text" id="hslField" readonly><button class="copy-small" onclick="copyField('hslField')">Copy</button></div>
+      <div class="result-row"><span class="rlabel">CMYK</span><input type="text" id="cmykField" readonly><button class="copy-small" onclick="copyField('cmykField')">Copy</button></div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Live Conversion</h3><p>Every format updates instantly as you pick a color or edit the HEX field.</p></div>
+    <div class="feature"><h3>🎨 4 Formats</h3><p>HEX, RGB, HSL, and CMYK — covering web and print design needs.</p></div>
+    <div class="feature"><h3>📋 Copy Any Format</h3><p>Copy any value directly to your clipboard.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All conversion happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Color Format Converter</h2>
+  <ol class="steps">
+    <li><strong>Pick a color:</strong> Use the color picker or type a HEX value directly.</li>
+    <li><strong>Read the formats:</strong> RGB, HSL, and CMYK all update instantly.</li>
+    <li><strong>Copy what you need:</strong> Click Copy next to any value.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>When would I need CMYK instead of RGB?</summary><p>CMYK is used for print design (based on ink combinations), while RGB and HEX are used for screens and digital design — always check with your printer for exact CMYK values.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. All conversion happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Image &amp; Design Tools</h2>
+  <div class="related">
+    <a href="color-converter.html">🎨 Color Converter (HEX/RGB)</a>
+    <a href="palette-generator.html">🎨 Color Palette Generator</a>
+    <a href="color-extractor.html">🎨 Color Palette Extractor</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+function hexToRgb(hex){
+  const h = hex.replace('#','');
+  const full = h.length === 3 ? h.split('').map(c=>c+c).join('') : h;
+  return [parseInt(full.substring(0,2),16), parseInt(full.substring(2,4),16), parseInt(full.substring(4,6),16)];
+}
+
+function rgbToHsl(r,g,b){
+  r/=255; g/=255; b/=255;
+  const max=Math.max(r,g,b), min=Math.min(r,g,b);
+  let h,s,l=(max+min)/2;
+  if(max===min){h=s=0;}
+  else{
+    const d=max-min;
+    s = l>0.5 ? d/(2-max-min) : d/(max+min);
+    switch(max){
+      case r: h=(g-b)/d+(g<b?6:0); break;
+      case g: h=(b-r)/d+2; break;
+      case b: h=(r-g)/d+4; break;
+    }
+    h*=60;
+  }
+  return [Math.round(h), Math.round(s*100), Math.round(l*100)];
+}
+
+function rgbToCmyk(r,g,b){
+  if(r===0 && g===0 && b===0) return [0,0,0,100];
+  const rp=r/255, gp=g/255, bp=b/255;
+  const k = 1 - Math.max(rp,gp,bp);
+  const c = (1-rp-k)/(1-k);
+  const m = (1-gp-k)/(1-k);
+  const y = (1-bp-k)/(1-k);
+  return [Math.round(c*100), Math.round(m*100), Math.round(y*100), Math.round(k*100)];
+}
+
+function update(hex){
+  const errorMsg = document.getElementById('errorMsg');
+  if(!/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(hex)){
+    errorMsg.textContent = 'Enter a valid HEX code, e.g. #2563eb or #fff';
+    return;
+  }
+  errorMsg.textContent = '';
+
+  const [r,g,b] = hexToRgb(hex);
+  const [h,s,l] = rgbToHsl(r,g,b);
+  const [c,m,y,k] = rgbToCmyk(r,g,b);
+
+  document.getElementById('swatchPreview').style.background = hex;
+  document.getElementById('colorPicker').value = hex.length === 4 ? '#'+hex.slice(1).split('').map(ch=>ch+ch).join('') : hex;
+  document.getElementById('rgbField').value = `rgb(${r}, ${g}, ${b})`;
+  document.getElementById('hslField').value = `hsl(${h}, ${s}%, ${l}%)`;
+  document.getElementById('cmykField').value = `cmyk(${c}%, ${m}%, ${y}%, ${k}%)`;
+}
+
+document.getElementById('colorPicker').addEventListener('input', e => {
+  document.getElementById('hexField').value = e.target.value.toUpperCase();
+  update(e.target.value);
+});
+
+document.getElementById('hexField').addEventListener('input', e => {
+  update(e.target.value.trim());
+});
+
+function copyField(id){
+  const text = document.getElementById(id).value;
+  navigator.clipboard.writeText(text);
+}
+
+update('#2563eb');
+</script>
+</body>
+</html>

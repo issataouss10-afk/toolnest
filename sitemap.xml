@@ -397,4 +397,36 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+
+    <!-- Newest Batch Added -->
+    <url>
+        <loc>https://toolnest-jet.vercel.app/robots-txt-generator.html</loc>
+        <lastmod>2026-08-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://toolnest-jet.vercel.app/gitignore-generator.html</loc>
+        <lastmod>2026-08-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://toolnest-jet.vercel.app/pomodoro-timer.html</loc>
+        <lastmod>2026-08-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://toolnest-jet.vercel.app/readability-checker.html</loc>
+        <lastmod>2026-08-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://toolnest-jet.vercel.app/curl-generator.html</loc>
+        <lastmod>2026-08-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

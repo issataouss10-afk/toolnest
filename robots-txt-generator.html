@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robots.txt Generator | Create robots.txt Online | ToolNest</title>
+<meta name="description" content="Generate a valid robots.txt file for your website instantly, with per-bot rules and sitemap reference. Free, 100% client-side.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/robots-txt-generator.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  input[type=text], input[type=url]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:14.5px;color:var(--ink);margin-bottom:14px;}
+  input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .rules-list{display:flex;flex-direction:column;gap:10px;margin-top:8px;}
+  .rule-row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:8px;align-items:center;}
+  @media (max-width:700px){.rule-row{grid-template-columns:1fr 1fr;}}
+  .rule-row select, .rule-row input{padding:9px 10px;border:1px solid var(--line);border-radius:8px;font-size:13px;}
+  .remove-rule{background:#fee2e2;color:#dc2626;border:none;width:30px;height:30px;border-radius:6px;cursor:pointer;font-size:14px;}
+  .add-rule-btn{margin-top:10px;background:#f1f5f9;border:1px solid var(--line);color:var(--ink);padding:8px 14px;border-radius:8px;font-size:12.5px;font-weight:600;cursor:pointer;}
+  .output-box{margin-top:20px;background:#0f172a;color:#e2e8f0;border-radius:10px;padding:16px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;white-space:pre-wrap;word-break:break-word;max-height:320px;overflow-y:auto;}
+  .output-actions{display:flex;justify-content:flex-end;margin-top:12px;}
+  .copy-btn{background:var(--blue);color:#fff;border:none;padding:9px 18px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;}
+  .copy-btn:hover{background:var(--blue-dark);}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">📈 SEO &amp; Marketing Tools</a> / <strong>Robots.txt Generator</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🤖</div>
+    <div><h1>Robots.txt Generator</h1><p>Generate a valid robots.txt file for your website instantly. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="field">
+      <label for="sitemapInput">Sitemap URL (optional)</label>
+      <input type="url" id="sitemapInput" value="https://toolnest-jet.vercel.app/sitemap.xml">
+    </div>
+
+    <label style="display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;">Rules</label>
+    <div class="rules-list" id="rulesList"></div>
+    <button class="add-rule-btn" onclick="addRule()">+ Add Rule</button>
+
+    <div class="output-box" id="outputBox"></div>
+    <div class="output-actions">
+      <button class="copy-btn" onclick="copyOutput()">📋 Copy robots.txt</button>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Live Generation</h3><p>The robots.txt content updates instantly as you edit rules.</p></div>
+    <div class="feature"><h3>🤖 Per-Bot Rules</h3><p>Set different rules for specific crawlers, or apply to all bots with *.</p></div>
+    <div class="feature"><h3>🗺️ Sitemap Reference</h3><p>Automatically includes your sitemap URL for search engines.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All generation happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Robots.txt Generator</h2>
+  <ol class="steps">
+    <li><strong>Add your sitemap URL:</strong> Optional, but recommended for SEO.</li>
+    <li><strong>Add rules:</strong> Set the user agent, allow/disallow, and path for each rule.</li>
+    <li><strong>Copy the result:</strong> Click Copy and save it as robots.txt in your site's root.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>Where should robots.txt be placed?</summary><p>It must be placed at the root of your domain, e.g. https://example.com/robots.txt, for search engines to find it.</p></details>
+    <details><summary>Does robots.txt guarantee a page won't be indexed?</summary><p>No, it only requests that crawlers not access certain paths — for guaranteed exclusion from search results, use a noindex meta tag instead.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. The file is generated entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related SEO &amp; Marketing Tools</h2>
+  <div class="related">
+    <a href="meta-tag-generator.html">🏷️ Meta Tag Generator</a>
+    <a href="slug-generator.html">🔗 Slug Generator</a>
+    <a href="readability-checker.html">📖 Readability Score Checker</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+let rules = [
+  { agent: '*', type: 'Disallow', path: '/admin/' },
+  { agent: '*', type: 'Allow', path: '/' },
+];
+
+function renderRules(){
+  const list = document.getElementById('rulesList');
+  list.innerHTML = rules.map((r, i) => `
+    <div class="rule-row">
+      <input type="text" value="${r.agent}" placeholder="User-agent (e.g. *)" oninput="updateRule(${i}, 'agent', this.value)">
+      <select onchange="updateRule(${i}, 'type', this.value)">
+        <option value="Allow" ${r.type==='Allow'?'selected':''}>Allow</option>
+        <option value="Disallow" ${r.type==='Disallow'?'selected':''}>Disallow</option>
+      </select>
+      <input type="text" value="${r.path}" placeholder="/path/" oninput="updateRule(${i}, 'path', this.value)">
+      <button class="remove-rule" onclick="removeRule(${i})">✕</button>
+    </div>
+  `).join('');
+}
+
+function updateRule(i, key, value){
+  rules[i][key] = value;
+  generate();
+}
+
+function addRule(){
+  rules.push({ agent: '*', type: 'Disallow', path: '/' });
+  renderRules();
+  generate();
+}
+
+function removeRule(i){
+  rules.splice(i, 1);
+  renderRules();
+  generate();
+}
+
+function generate(){
+  const sitemap = document.getElementById('sitemapInput').value.trim();
+
+  const grouped = {};
+  rules.forEach(r => {
+    if(!grouped[r.agent]) grouped[r.agent] = [];
+    grouped[r.agent].push(r);
+  });
+
+  let output = '';
+  Object.keys(grouped).forEach(agent => {
+    output += `User-agent: ${agent}\n`;
+    grouped[agent].forEach(r => {
+      output += `${r.type}: ${r.path}\n`;
+    });
+    output += '\n';
+  });
+
+  if(sitemap){
+    output += `Sitemap: ${sitemap}\n`;
+  }
+
+  document.getElementById('outputBox').textContent = output.trim();
+}
+
+document.getElementById('sitemapInput').addEventListener('input', generate);
+
+function copyOutput(){
+  const text = document.getElementById('outputBox').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    const old = btn.textContent;
+    btn.textContent = '✅ Copied!';
+    setTimeout(() => btn.textContent = old, 1200);
+  });
+}
+
+renderRules();
+generate();
+</script>
+</body>
+</html>

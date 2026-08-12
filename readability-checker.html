@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Readability Score Checker | Flesch Reading Ease | ToolNest</title>
+<meta name="description" content="Check your text's readability score instantly with Flesch Reading Ease and grade level estimates. Free, 100% client-side readability checker.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/readability-checker.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;--green:#16a34a;--amber:#d97706;--red:#dc2626;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  textarea{width:100%;min-height:180px;padding:14px;border:1px solid var(--line);border-radius:10px;font-size:15px;color:var(--ink);resize:vertical;}
+  textarea:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .result-hero{margin-top:20px;background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center;}
+  .result-hero .big-num{font-size:40px;font-weight:800;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .result-hero .cat-tag{display:inline-block;margin-top:8px;padding:6px 16px;border-radius:999px;font-weight:700;font-size:13.5px;}
+  .cat-easy{background:#dcfce7;color:var(--green);}
+  .cat-medium{background:#fef3c7;color:var(--amber);}
+  .cat-hard{background:#fee2e2;color:var(--red);}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px;}
+  @media (max-width:640px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
+  .stat-card{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center;}
+  .stat-card .num{font-size:18px;font-weight:800;color:var(--blue);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .stat-card .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:700;margin-top:4px;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">📈 SEO &amp; Marketing Tools</a> / <strong>Readability Score Checker</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">📖</div>
+    <div><h1>Readability Score Checker</h1><p>Check your text's Flesch Reading Ease score and estimated grade level instantly. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <textarea id="textInput">Writing for the web means keeping sentences short and words simple. Readers scan more than they read, so clarity matters more than clever phrasing. Short paragraphs and everyday words help your content reach a wider audience.</textarea>
+
+    <div class="result-hero">
+      <div class="big-num" id="scoreValue">70</div>
+      <div class="cat-tag cat-easy" id="catTag">Easy to read</div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card"><div class="num" id="gradeLevel">7th</div><div class="label">Grade Level</div></div>
+      <div class="stat-card"><div class="num" id="wordCount">0</div><div class="label">Words</div></div>
+      <div class="stat-card"><div class="num" id="sentenceCount">0</div><div class="label">Sentences</div></div>
+      <div class="stat-card"><div class="num" id="avgWordsPerSentence">0</div><div class="label">Words / Sentence</div></div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Live Scoring</h3><p>Your readability score updates instantly as you type or paste text.</p></div>
+    <div class="feature"><h3>📊 Flesch Reading Ease</h3><p>The industry-standard formula used by writers and editors worldwide.</p></div>
+    <div class="feature"><h3>🎓 Estimated Grade Level</h3><p>See roughly what US school grade level your writing matches.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All analysis happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Readability Score Checker</h2>
+  <ol class="steps">
+    <li><strong>Paste your text:</strong> Add an article, email, or any writing sample.</li>
+    <li><strong>Read the score:</strong> Higher scores mean easier to read.</li>
+    <li><strong>Check the grade level:</strong> See the estimated US school grade needed to understand it.</li>
+    <li><strong>Revise if needed:</strong> Shorter sentences and simpler words raise the score.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>What is a good Flesch Reading Ease score?</summary><p>Scores of 60-70 are considered easily understood by most adults; general web content often aims for 60+ for broad accessibility.</p></details>
+    <details><summary>How is the score calculated?</summary><p>It uses the Flesch Reading Ease formula, based on average sentence length and average syllables per word.</p></details>
+    <details><summary>Is my text sent to a server?</summary><p>No. All analysis happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related SEO &amp; Marketing Tools</h2>
+  <div class="related">
+    <a href="word-counter.html">📝 Word & Character Counter</a>
+    <a href="meta-tag-generator.html">🏷️ Meta Tag Generator</a>
+    <a href="slug-generator.html">🔗 Slug Generator</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+function countSyllables(word){
+  word = word.toLowerCase().replace(/[^a-z]/g, '');
+  if(word.length === 0) return 0;
+  if(word.length <= 3) return 1;
+  word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
+  word = word.replace(/^y/, '');
+  const matches = word.match(/[aeiouy]{1,2}/g);
+  return matches ? matches.length : 1;
+}
+
+function analyze(){
+  const text = document.getElementById('textInput').value.trim();
+  if(!text){
+    document.getElementById('scoreValue').textContent = '—';
+    return;
+  }
+
+  const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+  const words = text.split(/\s+/).filter(w => w.trim().length > 0);
+  const syllableCount = words.reduce((sum, w) => sum + countSyllables(w), 0);
+
+  const sentenceCount = Math.max(1, sentences.length);
+  const wordCount = Math.max(1, words.length);
+
+  const avgWordsPerSentence = wordCount / sentenceCount;
+  const avgSyllablesPerWord = syllableCount / wordCount;
+
+  const fleschScore = 206.835 - 1.015 * avgWordsPerSentence - 84.6 * avgSyllablesPerWord;
+  const clampedScore = Math.max(0, Math.min(100, fleschScore));
+
+  const gradeLevel = 0.39 * avgWordsPerSentence + 11.8 * avgSyllablesPerWord - 15.59;
+
+  document.getElementById('scoreValue').textContent = Math.round(clampedScore);
+  document.getElementById('wordCount').textContent = wordCount;
+  document.getElementById('sentenceCount').textContent = sentenceCount;
+  document.getElementById('avgWordsPerSentence').textContent = avgWordsPerSentence.toFixed(1);
+  document.getElementById('gradeLevel').textContent = Math.max(1, Math.round(gradeLevel)) + 'th';
+
+  const tag = document.getElementById('catTag');
+  let cls, label;
+  if(clampedScore >= 60){ cls = 'cat-easy'; label = 'Easy to read'; }
+  else if(clampedScore >= 30){ cls = 'cat-medium'; label = 'Fairly difficult'; }
+  else { cls = 'cat-hard'; label = 'Very difficult'; }
+  tag.className = 'cat-tag ' + cls;
+  tag.textContent = label;
+}
+
+document.getElementById('textInput').addEventListener('input', analyze);
+analyze();
+</script>
+</body>
+</html>

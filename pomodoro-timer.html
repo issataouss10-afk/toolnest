@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pomodoro Timer | Free Focus Timer Online | ToolNest</title>
+<meta name="description" content="Stay focused with a Pomodoro timer that cycles between work and break sessions automatically. Free, 100% client-side pomodoro timer.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/pomodoro-timer.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;--green:#16a34a;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);text-align:center;}
+  .phase-tag{display:inline-block;padding:6px 16px;border-radius:999px;font-weight:700;font-size:13px;margin-bottom:16px;}
+  .phase-tag.work{background:#dbeafe;color:var(--blue-dark);}
+  .phase-tag.short{background:#dcfce7;color:var(--green);}
+  .phase-tag.long{background:#f3e8ff;color:#7c3aed;}
+  .timer-display{font-size:64px;font-weight:800;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#0f172a;color:#e2e8f0;border-radius:16px;padding:36px;letter-spacing:2px;}
+  .cycle-note{font-size:12.5px;color:var(--muted);margin-top:12px;}
+  .actions-row{display:flex;gap:10px;margin-top:20px;justify-content:center;flex-wrap:wrap;}
+  .btn{border:none;padding:12px 22px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;}
+  .btn-start{background:var(--blue);color:#fff;} .btn-start:hover{background:var(--blue-dark);}
+  .btn-pause{background:#f1f5f9;color:var(--ink);border:1px solid var(--line);}
+  .btn-skip{background:#f1f5f9;color:var(--ink);border:1px solid var(--line);}
+  .btn-reset{background:#f1f5f9;color:var(--ink);border:1px solid var(--line);}
+  .settings-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:22px;text-align:left;}
+  @media (max-width:600px){.settings-row{grid-template-columns:1fr;}}
+  .settings-row .field label{display:block;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;}
+  .settings-row input[type=number]{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;} .timer-display{font-size:40px;padding:24px;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">⚡ Productivity Tools</a> / <strong>Pomodoro Timer</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🍅</div>
+    <div><h1>Pomodoro Timer</h1><p>Stay focused with automatic work and break cycles. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="phase-tag work" id="phaseTag">Focus Time</div>
+    <div class="timer-display" id="timerDisplay">25:00</div>
+    <div class="cycle-note" id="cycleNote">Session 1 of 4</div>
+
+    <div class="actions-row">
+      <button class="btn btn-start" onclick="startTimer()">▶️ Start</button>
+      <button class="btn btn-pause" onclick="pauseTimer()">⏸️ Pause</button>
+      <button class="btn btn-skip" onclick="skipPhase()">⏭️ Skip</button>
+      <button class="btn btn-reset" onclick="resetAll()">🔄 Reset</button>
+    </div>
+
+    <div class="settings-row">
+      <div class="field"><label>Focus (min)</label><input type="number" id="workInput" value="25" min="1"></div>
+      <div class="field"><label>Short Break (min)</label><input type="number" id="shortInput" value="5" min="1"></div>
+      <div class="field"><label>Long Break (min)</label><input type="number" id="longInput" value="15" min="1"></div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>🍅 Automatic Cycles</h3><p>Automatically switches between focus and break sessions.</p></div>
+    <div class="feature"><h3>🔔 Sound Alerts</h3><p>A gentle beep plays when each session ends.</p></div>
+    <div class="feature"><h3>🎛️ Fully Customizable</h3><p>Set your own focus, short break, and long break durations.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>Everything runs in your browser tab. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Pomodoro Timer</h2>
+  <ol class="steps">
+    <li><strong>Set your durations:</strong> Adjust focus and break lengths if you like.</li>
+    <li><strong>Start the timer:</strong> Click Start to begin your first focus session.</li>
+    <li><strong>Work until the alert:</strong> A break starts automatically after each focus session.</li>
+    <li><strong>Repeat the cycle:</strong> After 4 focus sessions, a longer break begins.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>What is the Pomodoro Technique?</summary><p>It's a time management method that breaks work into focused intervals (traditionally 25 minutes) separated by short breaks, with a longer break after several cycles.</p></details>
+    <details><summary>Does the timer keep running if I close the tab?</summary><p>No, the timer only runs while the page stays open in your browser.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. The timer runs entirely in your browser tab.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Productivity Tools</h2>
+  <div class="related">
+    <a href="countdown-timer.html">⏱️ Countdown Timer</a>
+    <a href="timezone-converter.html">🌍 Timezone Converter</a>
+    <a href="word-counter.html">📝 Word & Character Counter</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+let phase = 'work'; // work, short, long
+let sessionCount = 1;
+let remaining = 25 * 60;
+let interval = null;
+
+function pad(n){ return n.toString().padStart(2,'0'); }
+
+function playBeep(){
+  try{
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.frequency.value = phase === 'work' ? 660 : 880;
+    gain.gain.setValueAtTime(0.2, ctx.currentTime);
+    osc.start();
+    osc.stop(ctx.currentTime + 0.5);
+  } catch(e){}
+}
+
+function getDuration(p){
+  if(p === 'work') return (parseInt(document.getElementById('workInput').value,10) || 25) * 60;
+  if(p === 'short') return (parseInt(document.getElementById('shortInput').value,10) || 5) * 60;
+  return (parseInt(document.getElementById('longInput').value,10) || 15) * 60;
+}
+
+function updateDisplay(){
+  const m = Math.floor(remaining / 60);
+  const s = remaining % 60;
+  document.getElementById('timerDisplay').textContent = `${pad(m)}:${pad(s)}`;
+
+  const tag = document.getElementById('phaseTag');
+  tag.className = 'phase-tag ' + (phase === 'work' ? 'work' : phase === 'short' ? 'short' : 'long');
+  tag.textContent = phase === 'work' ? 'Focus Time' : phase === 'short' ? 'Short Break' : 'Long Break';
+
+  document.getElementById('cycleNote').textContent = `Session ${sessionCount} of 4`;
+}
+
+function nextPhase(){
+  playBeep();
+  if(phase === 'work'){
+    if(sessionCount >= 4){
+      phase = 'long';
+      sessionCount = 1;
+    } else {
+      phase = 'short';
+    }
+  } else {
+    if(phase === 'short') sessionCount++;
+    phase = 'work';
+  }
+  remaining = getDuration(phase);
+  updateDisplay();
+}
+
+function tick(){
+  remaining--;
+  if(remaining < 0){
+    nextPhase();
+    return;
+  }
+  updateDisplay();
+}
+
+function startTimer(){
+  if(interval) return;
+  interval = setInterval(tick, 1000);
+}
+
+function pauseTimer(){
+  clearInterval(interval);
+  interval = null;
+}
+
+function skipPhase(){
+  nextPhase();
+}
+
+function resetAll(){
+  clearInterval(interval);
+  interval = null;
+  phase = 'work';
+  sessionCount = 1;
+  remaining = getDuration('work');
+  updateDisplay();
+}
+
+['workInput','shortInput','longInput'].forEach(id => {
+  document.getElementById(id).addEventListener('input', () => {
+    if(!interval) resetAll();
+  });
+});
+
+updateDisplay();
+</script>
+</body>
+</html>

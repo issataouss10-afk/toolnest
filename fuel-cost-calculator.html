@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuel Cost Calculator | Trip Gas Cost Estimator | ToolNest</title>
+<meta name="description" content="Estimate the fuel cost of any trip based on distance, fuel efficiency, and price per gallon or liter. Free, 100% client-side fuel cost calculator.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/fuel-cost-calculator.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .unit-tabs{display:flex;gap:8px;margin-bottom:20px;}
+  .unit-tabs button{border:1px solid var(--line);background:#f8fafc;color:var(--muted);padding:9px 16px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;}
+  .unit-tabs button.active{background:var(--blue);border-color:var(--blue);color:#fff;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:600px){.grid2{grid-template-columns:1fr;}}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  input[type=number]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);}
+  input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .result-hero{margin-top:22px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border-radius:14px;padding:26px;text-align:center;}
+  .result-hero .big-num{font-size:40px;font-weight:800;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .result-hero .sub{font-size:13px;opacity:.9;margin-top:6px;}
+  .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;}
+  .stat-card{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center;}
+  .stat-card .num{font-size:18px;font-weight:800;color:var(--blue);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .stat-card .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:700;margin-top:4px;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">⚡ Productivity Tools</a> / <strong>Fuel Cost Calculator</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">⛽</div>
+    <div><h1>Fuel Cost Calculator</h1><p>Estimate the fuel cost of any trip based on distance, efficiency, and fuel price. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="unit-tabs">
+      <button class="active" data-unit="mpg" onclick="setUnit('mpg')">Miles / Gallon (US)</button>
+      <button data-unit="l100km" onclick="setUnit('l100km')">Liters / 100km</button>
+    </div>
+
+    <div class="grid2">
+      <div class="field"><label id="distanceLabel">Trip Distance (miles)</label><input type="number" id="distanceInput" value="300"></div>
+      <div class="field"><label id="efficiencyLabel">Fuel Efficiency (MPG)</label><input type="number" id="efficiencyInput" value="28"></div>
+    </div>
+    <div class="field" style="margin-top:14px;">
+      <label id="priceLabel">Fuel Price (per gallon)</label>
+      <input type="number" id="priceInput" value="3.50" step="0.01">
+    </div>
+
+    <div class="result-hero">
+      <div class="big-num" id="totalCost">$37.50</div>
+      <div class="sub">Estimated Fuel Cost</div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card"><div class="num" id="fuelNeeded">0</div><div class="label">Fuel Needed</div></div>
+      <div class="stat-card"><div class="num" id="costPerMile">$0.00</div><div class="label">Cost per Distance Unit</div></div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Instant Estimate</h3><p>The cost updates live as you type distance, efficiency, or fuel price.</p></div>
+    <div class="feature"><h3>🌍 Two Unit Systems</h3><p>Switch between MPG (US) and Liters/100km (metric) fuel efficiency.</p></div>
+    <div class="feature"><h3>🧮 Full Breakdown</h3><p>See total cost, fuel needed, and cost per mile or kilometer.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All calculation happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Fuel Cost Calculator</h2>
+  <ol class="steps">
+    <li><strong>Pick a unit system:</strong> MPG or Liters/100km.</li>
+    <li><strong>Enter the trip distance:</strong> How far you're driving.</li>
+    <li><strong>Enter your vehicle's efficiency and fuel price:</strong> Check your last fill-up or a nearby station.</li>
+    <li><strong>Read the estimate:</strong> Total cost, fuel needed, and cost per distance unit.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>How accurate is this estimate?</summary><p>It's based on the average efficiency you enter — real-world fuel use varies with driving style, terrain, traffic, and vehicle load.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. All calculation happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Productivity Tools</h2>
+  <div class="related">
+    <a href="unit-converter.html">📐 Unit Converter</a>
+    <a href="percentage-calculator.html">💯 Percentage Calculator</a>
+    <a href="loan-calculator.html">🏦 Loan Calculator</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+let unit = 'mpg';
+
+function setUnit(u){
+  unit = u;
+  document.querySelectorAll('.unit-tabs button').forEach(b => b.classList.toggle('active', b.dataset.unit === u));
+  if(u === 'mpg'){
+    document.getElementById('distanceLabel').textContent = 'Trip Distance (miles)';
+    document.getElementById('efficiencyLabel').textContent = 'Fuel Efficiency (MPG)';
+    document.getElementById('priceLabel').textContent = 'Fuel Price (per gallon)';
+    document.getElementById('distanceInput').value = 300;
+    document.getElementById('efficiencyInput').value = 28;
+    document.getElementById('priceInput').value = 3.50;
+  } else {
+    document.getElementById('distanceLabel').textContent = 'Trip Distance (km)';
+    document.getElementById('efficiencyLabel').textContent = 'Fuel Efficiency (L/100km)';
+    document.getElementById('priceLabel').textContent = 'Fuel Price (per liter)';
+    document.getElementById('distanceInput').value = 480;
+    document.getElementById('efficiencyInput').value = 8;
+    document.getElementById('priceInput').value = 1.50;
+  }
+  calculate();
+}
+
+function calculate(){
+  const distance = parseFloat(document.getElementById('distanceInput').value) || 0;
+  const efficiency = parseFloat(document.getElementById('efficiencyInput').value) || 0;
+  const price = parseFloat(document.getElementById('priceInput').value) || 0;
+
+  let fuelNeeded, unitLabel, distUnitLabel;
+  if(unit === 'mpg'){
+    fuelNeeded = efficiency > 0 ? distance / efficiency : 0;
+    unitLabel = 'gallons';
+    distUnitLabel = 'mile';
+  } else {
+    fuelNeeded = (distance / 100) * efficiency;
+    unitLabel = 'liters';
+    distUnitLabel = 'km';
+  }
+
+  const totalCost = fuelNeeded * price;
+  const costPerDistance = distance > 0 ? totalCost / distance : 0;
+
+  document.getElementById('totalCost').textContent = '$' + totalCost.toFixed(2);
+  document.getElementById('fuelNeeded').textContent = fuelNeeded.toFixed(1) + ' ' + unitLabel;
+  document.getElementById('costPerMile').textContent = '$' + costPerDistance.toFixed(3) + '/' + distUnitLabel;
+}
+
+['distanceInput','efficiencyInput','priceInput'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calculate);
+});
+calculate();
+</script>
+</body>
+</html>

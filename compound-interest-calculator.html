@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compound Interest Calculator | Grow Your Savings | ToolNest</title>
+<meta name="description" content="Calculate how your savings or investment grows with compound interest over time, including regular contributions. Free, 100% client-side.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/compound-interest-calculator.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;--green:#16a34a;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:600px){.grid2{grid-template-columns:1fr;}}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  input[type=number]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);}
+  select{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;color:var(--ink);background:#fff;}
+  input:focus, select:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .result-hero{margin-top:22px;background:linear-gradient(135deg,#16a34a,#15803d);color:#fff;border-radius:14px;padding:26px;text-align:center;}
+  .result-hero .big-num{font-size:36px;font-weight:800;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .result-hero .sub{font-size:13px;opacity:.9;margin-top:6px;}
+  .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;}
+  .stat-card{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center;}
+  .stat-card .num{font-size:18px;font-weight:800;color:var(--blue);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .stat-card .label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:700;margin-top:4px;}
+  .note{font-size:12px;color:var(--muted);margin-top:16px;background:#fffbeb;border:1px solid #fde68a;padding:10px 14px;border-radius:8px;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">⚡ Productivity Tools</a> / <strong>Compound Interest Calculator</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">📈</div>
+    <div><h1>Compound Interest Calculator</h1><p>See how your savings or investment grows over time with compound interest. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="grid2">
+      <div class="field"><label for="principalInput">Initial Amount</label><input type="number" id="principalInput" value="1000"></div>
+      <div class="field"><label for="contributionInput">Monthly Contribution</label><input type="number" id="contributionInput" value="100"></div>
+      <div class="field"><label for="rateInput">Annual Interest Rate (%)</label><input type="number" id="rateInput" value="7" step="0.1"></div>
+      <div class="field"><label for="yearsInput">Number of Years</label><input type="number" id="yearsInput" value="10"></div>
+      <div class="field"><label for="freqSelect">Compounding Frequency</label>
+        <select id="freqSelect">
+          <option value="12" selected>Monthly</option>
+          <option value="4">Quarterly</option>
+          <option value="1">Annually</option>
+          <option value="365">Daily</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="result-hero">
+      <div class="big-num" id="futureValue">$0</div>
+      <div class="sub">Estimated Future Value</div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card"><div class="num" id="totalContributed">$0</div><div class="label">Total Contributed</div></div>
+      <div class="stat-card"><div class="num" id="totalInterest">$0</div><div class="label">Total Interest Earned</div></div>
+    </div>
+
+    <div class="note">ℹ️ This is an estimate assuming a constant rate of return, which real investments don't guarantee. This isn't financial advice.</div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Instant Projection</h3><p>The future value updates live as you adjust any field.</p></div>
+    <div class="feature"><h3>💰 Includes Contributions</h3><p>Model regular monthly deposits, not just a one-time lump sum.</p></div>
+    <div class="feature"><h3>🔁 Flexible Compounding</h3><p>Choose monthly, quarterly, annual, or daily compounding.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All calculation happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Compound Interest Calculator</h2>
+  <ol class="steps">
+    <li><strong>Enter your starting amount:</strong> The initial deposit or investment.</li>
+    <li><strong>Add monthly contributions:</strong> Optional, set to 0 to skip.</li>
+    <li><strong>Set the rate and timeframe:</strong> Expected annual return and number of years.</li>
+    <li><strong>Read the projection:</strong> Future value, total contributed, and interest earned.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>What does compounding frequency mean?</summary><p>It's how often interest is calculated and added to the balance — more frequent compounding (like daily) results in slightly higher returns than less frequent (like annual) for the same rate.</p></details>
+    <details><summary>Is this a guarantee of returns?</summary><p>No, this is a mathematical projection assuming a constant rate — actual investment returns vary and aren't guaranteed.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. All calculation happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Productivity Tools</h2>
+  <div class="related">
+    <a href="loan-calculator.html">🏦 Loan Calculator</a>
+    <a href="mortgage-calculator.html">🏠 Mortgage Calculator</a>
+    <a href="percentage-calculator.html">💯 Percentage Calculator</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+function calculate(){
+  const principal = parseFloat(document.getElementById('principalInput').value) || 0;
+  const monthlyContribution = parseFloat(document.getElementById('contributionInput').value) || 0;
+  const annualRate = parseFloat(document.getElementById('rateInput').value) || 0;
+  const years = parseFloat(document.getElementById('yearsInput').value) || 0;
+  const n = parseInt(document.getElementById('freqSelect').value, 10);
+
+  const r = annualRate / 100;
+  const periods = n * years;
+
+  // Future value of initial principal
+  const fvPrincipal = principal * Math.pow(1 + r/n, periods);
+
+  // Future value of monthly contributions (converted to per-period contribution)
+  const contributionPerPeriod = monthlyContribution * (12 / n);
+  let fvContributions = 0;
+  if(r > 0){
+    fvContributions = contributionPerPeriod * ((Math.pow(1 + r/n, periods) - 1) / (r/n));
+  } else {
+    fvContributions = contributionPerPeriod * periods;
+  }
+
+  const futureValue = fvPrincipal + fvContributions;
+  const totalContributed = principal + (monthlyContribution * 12 * years);
+  const totalInterest = futureValue - totalContributed;
+
+  document.getElementById('futureValue').textContent = '$' + futureValue.toLocaleString(undefined, {maximumFractionDigits:0});
+  document.getElementById('totalContributed').textContent = '$' + totalContributed.toLocaleString(undefined, {maximumFractionDigits:0});
+  document.getElementById('totalInterest').textContent = '$' + totalInterest.toLocaleString(undefined, {maximumFractionDigits:0});
+}
+
+['principalInput','contributionInput','rateInput','yearsInput','freqSelect'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calculate);
+});
+calculate();
+</script>
+</body>
+</html>

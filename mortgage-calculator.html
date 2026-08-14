@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage Calculator | Estimate Your Monthly Payment | ToolNest</title>
+<meta name="description" content="Estimate your monthly mortgage payment including principal, interest, property tax, and insurance. Free, 100% client-side mortgage calculator.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/mortgage-calculator.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:600px){.grid2{grid-template-columns:1fr;}}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  input[type=number]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:15px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);}
+  input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .result-hero{margin-top:22px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border-radius:14px;padding:26px;text-align:center;}
+  .result-hero .big-num{font-size:36px;font-weight:800;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .result-hero .sub{font-size:13px;opacity:.85;margin-top:6px;}
+  .breakdown-list{margin-top:18px;display:flex;flex-direction:column;gap:8px;}
+  .breakdown-row{display:flex;justify-content:space-between;align-items:center;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:11px 16px;font-size:13.5px;}
+  .breakdown-row .rvalue{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;color:var(--blue-dark);}
+  .note{font-size:12px;color:var(--muted);margin-top:16px;background:#fffbeb;border:1px solid #fde68a;padding:10px 14px;border-radius:8px;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">⚡ Productivity Tools</a> / <strong>Mortgage Calculator</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🏠</div>
+    <div><h1>Mortgage Calculator</h1><p>Estimate your monthly mortgage payment including taxes and insurance. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="grid2">
+      <div class="field"><label for="priceInput">Home Price</label><input type="number" id="priceInput" value="350000"></div>
+      <div class="field"><label for="downInput">Down Payment</label><input type="number" id="downInput" value="70000"></div>
+      <div class="field"><label for="rateInput">Interest Rate (%)</label><input type="number" id="rateInput" value="6.5" step="0.01"></div>
+      <div class="field"><label for="termInput">Loan Term (years)</label><input type="number" id="termInput" value="30"></div>
+      <div class="field"><label for="taxInput">Annual Property Tax</label><input type="number" id="taxInput" value="3500"></div>
+      <div class="field"><label for="insuranceInput">Annual Home Insurance</label><input type="number" id="insuranceInput" value="1400"></div>
+    </div>
+
+    <div class="result-hero">
+      <div class="big-num" id="monthlyTotal">$0</div>
+      <div class="sub">Estimated Total Monthly Payment</div>
+    </div>
+
+    <div class="breakdown-list">
+      <div class="breakdown-row"><span>Principal &amp; Interest</span><span class="rvalue" id="piValue">$0</span></div>
+      <div class="breakdown-row"><span>Property Tax (monthly)</span><span class="rvalue" id="taxValue">$0</span></div>
+      <div class="breakdown-row"><span>Home Insurance (monthly)</span><span class="rvalue" id="insValue">$0</span></div>
+      <div class="breakdown-row"><span>Loan Amount</span><span class="rvalue" id="loanAmount">$0</span></div>
+    </div>
+
+    <div class="note">ℹ️ This is an estimate for principal, interest, taxes, and insurance (PITI). It excludes PMI, HOA fees, or closing costs — this isn't financial advice.</div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Instant Estimate</h3><p>Your full monthly payment updates live as you adjust any field.</p></div>
+    <div class="feature"><h3>🏠 Full PITI Breakdown</h3><p>See principal, interest, taxes, and insurance separately.</p></div>
+    <div class="feature"><h3>💵 Down Payment Aware</h3><p>Automatically calculates the loan amount after your down payment.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All calculation happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Mortgage Calculator</h2>
+  <ol class="steps">
+    <li><strong>Enter the home price and down payment:</strong> The loan amount is calculated automatically.</li>
+    <li><strong>Set the rate and term:</strong> Your expected interest rate and loan length.</li>
+    <li><strong>Add tax and insurance:</strong> For a realistic full monthly payment.</li>
+    <li><strong>Read the breakdown:</strong> See each component of your estimated payment.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>What is PITI?</summary><p>PITI stands for Principal, Interest, Taxes, and Insurance — the four components that typically make up a full monthly mortgage payment.</p></details>
+    <details><summary>Does this include PMI?</summary><p>No, private mortgage insurance (usually required with less than 20% down) isn't included in this estimate — check with a lender for your specific PMI cost.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. All calculation happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Productivity Tools</h2>
+  <div class="related">
+    <a href="loan-calculator.html">🏦 Loan Calculator</a>
+    <a href="compound-interest-calculator.html">📈 Compound Interest Calculator</a>
+    <a href="percentage-calculator.html">💯 Percentage Calculator</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+function calculate(){
+  const price = parseFloat(document.getElementById('priceInput').value) || 0;
+  const down = parseFloat(document.getElementById('downInput').value) || 0;
+  const annualRate = parseFloat(document.getElementById('rateInput').value) || 0;
+  const years = parseFloat(document.getElementById('termInput').value) || 30;
+  const annualTax = parseFloat(document.getElementById('taxInput').value) || 0;
+  const annualInsurance = parseFloat(document.getElementById('insuranceInput').value) || 0;
+
+  const loanAmount = Math.max(0, price - down);
+  const monthlyRate = (annualRate / 100) / 12;
+  const numPayments = years * 12;
+
+  let pi;
+  if(monthlyRate === 0){
+    pi = loanAmount / numPayments;
+  } else {
+    pi = loanAmount * (monthlyRate * Math.pow(1+monthlyRate, numPayments)) / (Math.pow(1+monthlyRate, numPayments) - 1);
+  }
+
+  const monthlyTax = annualTax / 12;
+  const monthlyInsurance = annualInsurance / 12;
+  const total = pi + monthlyTax + monthlyInsurance;
+
+  document.getElementById('monthlyTotal').textContent = '$' + total.toLocaleString(undefined, {maximumFractionDigits:0});
+  document.getElementById('piValue').textContent = '$' + pi.toLocaleString(undefined, {maximumFractionDigits:0});
+  document.getElementById('taxValue').textContent = '$' + monthlyTax.toLocaleString(undefined, {maximumFractionDigits:0});
+  document.getElementById('insValue').textContent = '$' + monthlyInsurance.toLocaleString(undefined, {maximumFractionDigits:0});
+  document.getElementById('loanAmount').textContent = '$' + loanAmount.toLocaleString(undefined, {maximumFractionDigits:0});
+}
+
+['priceInput','downInput','rateInput','termInput','taxInput','insuranceInput'].forEach(id => {
+  document.getElementById(id).addEventListener('input', calculate);
+});
+calculate();
+</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roman Numeral Converter | Number to Roman Numerals | ToolNest</title>
+<meta name="description" content="Convert numbers to Roman numerals and back instantly, in both directions. Free, 100% client-side Roman numeral converter.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/roman-numeral-converter.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .mode-tabs{display:flex;gap:8px;margin-bottom:18px;}
+  .mode-tabs button{border:1px solid var(--line);background:#f8fafc;color:var(--muted);padding:9px 16px;border-radius:999px;font-size:13px;font-weight:600;cursor:pointer;}
+  .mode-tabs button.active{background:var(--blue);border-color:var(--blue);color:#fff;}
+  input[type=text], input[type=number]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);text-align:center;}
+  input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .error{color:#dc2626;font-size:13px;margin-top:10px;text-align:center;min-height:16px;}
+  .output-box{margin-top:18px;background:#0f172a;color:#e2e8f0;border-radius:10px;padding:20px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:28px;font-weight:700;text-align:center;display:flex;justify-content:center;align-items:center;gap:14px;}
+  .copy-btn{background:var(--blue);color:#fff;border:none;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;}
+  .copy-btn:hover{background:var(--blue-dark);}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">Developer Tools</a> / <strong>Roman Numeral Converter</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🏛️</div>
+    <div><h1>Roman Numeral Converter</h1><p>Convert numbers to Roman numerals and back instantly. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="mode-tabs">
+      <button class="active" data-mode="toRoman" onclick="setMode('toRoman')">Number → Roman</button>
+      <button data-mode="toNumber" onclick="setMode('toNumber')">Roman → Number</button>
+    </div>
+
+    <input type="text" id="mainInput" value="2026" inputmode="numeric">
+    <div class="error" id="errorMsg"></div>
+
+    <div class="output-box">
+      <span id="outputValue">MMXXVI</span>
+      <button class="copy-btn" onclick="copyOutput()">📋 Copy</button>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Instant Conversion</h3><p>The result updates live as you type in either direction.</p></div>
+    <div class="feature"><h3>🔄 Two-Way</h3><p>Convert numbers to Roman numerals, or Roman numerals back to numbers.</p></div>
+    <div class="feature"><h3>✅ Validity Check</h3><p>Invalid numbers or malformed Roman numerals show a clear error.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All conversion happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Roman Numeral Converter</h2>
+  <ol class="steps">
+    <li><strong>Pick a direction:</strong> Number to Roman, or Roman to number.</li>
+    <li><strong>Type your value:</strong> A whole number (1-3999) or a Roman numeral.</li>
+    <li><strong>Read the result:</strong> It converts instantly, and you can copy it.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>What's the largest number this supports?</summary><p>Standard Roman numerals go up to 3999 (MMMCMXCIX) using the traditional letter combinations without special extended notation.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. All conversion happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Developer Utilities</h2>
+  <div class="related">
+    <a href="statistics-calculator.html">📊 Statistics Calculator</a>
+    <a href="unit-converter.html">📐 Unit Converter</a>
+    <a href="base64-converter.html">🔤 Base64 Encoder / Decoder</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+let mode = 'toRoman';
+
+const VALUES = [
+  [1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],
+  [50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']
+];
+
+function toRoman(num){
+  let result = '';
+  let n = num;
+  for(const [val, sym] of VALUES){
+    while(n >= val){
+      result += sym;
+      n -= val;
+    }
+  }
+  return result;
+}
+
+function fromRoman(str){
+  const map = { I:1, V:5, X:10, L:50, C:100, D:500, M:1000 };
+  let total = 0;
+  let prev = 0;
+  for(let i = str.length-1; i >= 0; i--){
+    const val = map[str[i]];
+    if(val === undefined) return null;
+    if(val < prev) total -= val;
+    else total += val;
+    prev = val;
+  }
+  // Validate round-trip
+  if(total < 1 || total > 3999) return null;
+  if(toRoman(total) !== str) return null;
+  return total;
+}
+
+function setMode(m){
+  mode = m;
+  document.querySelectorAll('.mode-tabs button').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
+  document.getElementById('mainInput').value = m === 'toRoman' ? '2026' : 'MMXXVI';
+  convert();
+}
+
+function convert(){
+  const input = document.getElementById('mainInput').value.trim();
+  const errorMsg = document.getElementById('errorMsg');
+  const output = document.getElementById('outputValue');
+  errorMsg.textContent = '';
+
+  if(!input){ output.textContent = ''; return; }
+
+  if(mode === 'toRoman'){
+    const num = parseInt(input, 10);
+    if(isNaN(num) || num < 1 || num > 3999 || String(num) !== input.trim()){
+      errorMsg.textContent = 'Enter a whole number between 1 and 3999.';
+      output.textContent = '';
+      return;
+    }
+    output.textContent = toRoman(num);
+  } else {
+    const upper = input.toUpperCase();
+    const num = fromRoman(upper);
+    if(num === null){
+      errorMsg.textContent = 'Enter a valid Roman numeral (e.g. MMXXVI).';
+      output.textContent = '';
+      return;
+    }
+    output.textContent = num;
+  }
+}
+
+document.getElementById('mainInput').addEventListener('input', convert);
+
+function copyOutput(){
+  const text = document.getElementById('outputValue').textContent;
+  if(!text) return;
+  navigator.clipboard.writeText(text);
+}
+
+convert();
+</script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subnet Calculator | IP & CIDR Calculator | ToolNest</title>
+<meta name="description" content="Calculate network address, broadcast address, usable host range, and subnet mask from any IP/CIDR instantly. Free, 100% client-side.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/subnet-calculator.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  input[type=text]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:16px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);}
+  input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .error{color:#dc2626;font-size:13px;margin-top:8px;min-height:16px;}
+  .result-list{margin-top:20px;display:flex;flex-direction:column;gap:8px;}
+  .result-row{display:flex;justify-content:space-between;align-items:center;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:11px 16px;}
+  .result-row .rlabel{font-size:13px;font-weight:700;}
+  .result-row .rvalue{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;color:var(--blue-dark);font-weight:700;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">Developer Tools</a> / <strong>Subnet Calculator</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🌐</div>
+    <div><h1>Subnet Calculator</h1><p>Calculate network address, broadcast address, and host range from any IP/CIDR. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="field">
+      <label for="cidrInput">IP Address / CIDR</label>
+      <input type="text" id="cidrInput" value="192.168.1.10/24">
+    </div>
+    <div class="error" id="errorMsg"></div>
+
+    <div class="result-list" id="resultList"></div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Instant Calculation</h3><p>Every network detail updates live as you type an IP/CIDR.</p></div>
+    <div class="feature"><h3>🌐 Full Breakdown</h3><p>Network address, broadcast address, subnet mask, and usable host range.</p></div>
+    <div class="feature"><h3>🔢 Host Count</h3><p>See exactly how many usable host addresses the subnet provides.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All calculation happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Subnet Calculator</h2>
+  <ol class="steps">
+    <li><strong>Enter an IP/CIDR:</strong> e.g. 192.168.1.10/24.</li>
+    <li><strong>Read the breakdown:</strong> Network address, broadcast, subnet mask, and usable range appear instantly.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>What does the /24 mean?</summary><p>It's the CIDR prefix length — the number of bits used for the network portion of the address, which determines the subnet mask and how many hosts fit in the subnet.</p></details>
+    <details><summary>Why is the usable host count 2 less than the total?</summary><p>The first address in a subnet is reserved as the network address and the last as the broadcast address, so they aren't usable for hosts.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. All calculation happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Developer Utilities</h2>
+  <div class="related">
+    <a href="base-converter.html">🔢 Base Number Converter</a>
+    <a href="url-parser.html">🔗 URL Parser</a>
+    <a href="uuid-generator.html">🆔 UUID Generator</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+function ipToInt(ip){
+  const parts = ip.split('.').map(Number);
+  if(parts.length !== 4 || parts.some(p => isNaN(p) || p < 0 || p > 255)) return null;
+  return ((parts[0]<<24) >>> 0) + (parts[1]<<16) + (parts[2]<<8) + parts[3];
+}
+
+function intToIp(int){
+  return [(int>>>24)&255, (int>>>16)&255, (int>>>8)&255, int&255].join('.');
+}
+
+function calculate(){
+  const input = document.getElementById('cidrInput').value.trim();
+  const errorMsg = document.getElementById('errorMsg');
+  const list = document.getElementById('resultList');
+  errorMsg.textContent = '';
+
+  const match = input.match(/^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\/(\d{1,2})$/);
+  if(!match){
+    errorMsg.textContent = 'Enter a valid IP/CIDR, e.g. 192.168.1.10/24';
+    list.innerHTML = '';
+    return;
+  }
+
+  const ip = match[1];
+  const prefix = parseInt(match[2], 10);
+  if(prefix < 0 || prefix > 32){
+    errorMsg.textContent = 'CIDR prefix must be between 0 and 32.';
+    list.innerHTML = '';
+    return;
+  }
+
+  const ipInt = ipToInt(ip);
+  if(ipInt === null){
+    errorMsg.textContent = 'Enter a valid IPv4 address.';
+    list.innerHTML = '';
+    return;
+  }
+
+  const maskInt = prefix === 0 ? 0 : (0xFFFFFFFF << (32 - prefix)) >>> 0;
+  const networkInt = (ipInt & maskInt) >>> 0;
+  const broadcastInt = (networkInt | (~maskInt >>> 0)) >>> 0;
+  const totalHosts = Math.pow(2, 32 - prefix);
+  const usableHosts = prefix >= 31 ? totalHosts : Math.max(0, totalHosts - 2);
+
+  const firstHost = prefix >= 31 ? networkInt : networkInt + 1;
+  const lastHost = prefix >= 31 ? broadcastInt : broadcastInt - 1;
+
+  const rows = [
+    ['Network Address', intToIp(networkInt)],
+    ['Broadcast Address', intToIp(broadcastInt)],
+    ['Subnet Mask', intToIp(maskInt)],
+    ['CIDR Prefix', '/' + prefix],
+    ['Usable Host Range', `${intToIp(firstHost)} – ${intToIp(lastHost)}`],
+    ['Total Addresses', totalHosts.toLocaleString()],
+    ['Usable Hosts', usableHosts.toLocaleString()],
+  ];
+
+  list.innerHTML = rows.map(([label, val]) => `
+    <div class="result-row"><span class="rlabel">${label}</span><span class="rvalue">${val}</span></div>
+  `).join('');
+}
+
+document.getElementById('cidrInput').addEventListener('input', calculate);
+calculate();
+</script>
+</body>
+</html>

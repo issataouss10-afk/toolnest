@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base Number Converter | Binary, Octal, Decimal, Hex | ToolNest</title>
+<meta name="description" content="Convert numbers between binary, octal, decimal, and hexadecimal instantly. Free, 100% client-side base number converter.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/base-converter.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .result-list{display:flex;flex-direction:column;gap:10px;}
+  .result-row{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:center;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px 14px;}
+  .result-row.highlight{background:#eef2ff;border-color:#c7d2fe;}
+  .result-row .rlabel{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;}
+  .result-row input{border:none;background:transparent;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;color:var(--ink);outline:none;width:100%;}
+  .error{color:#dc2626;font-size:13px;margin-top:8px;min-height:16px;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">Developer Tools</a> / <strong>Base Number Converter</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🔢</div>
+    <div><h1>Base Number Converter</h1><p>Convert numbers between binary, octal, decimal, and hexadecimal instantly. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="result-list">
+      <div class="result-row highlight"><span class="rlabel">Decimal</span><input type="text" id="decField" value="255"></div>
+      <div class="result-row"><span class="rlabel">Binary</span><input type="text" id="binField" value="11111111"></div>
+      <div class="result-row"><span class="rlabel">Octal</span><input type="text" id="octField" value="377"></div>
+      <div class="result-row"><span class="rlabel">Hexadecimal</span><input type="text" id="hexField" value="FF"></div>
+    </div>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Live Conversion</h3><p>Edit any field and the rest update instantly.</p></div>
+    <div class="feature"><h3>🔢 4 Number Bases</h3><p>Binary, octal, decimal, and hexadecimal, all in one place.</p></div>
+    <div class="feature"><h3>✅ Input Validation</h3><p>Invalid digits for a given base show a clear error.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All conversion happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Base Number Converter</h2>
+  <ol class="steps">
+    <li><strong>Type a number in any field:</strong> Decimal, binary, octal, or hex.</li>
+    <li><strong>Read the others:</strong> Every other base updates automatically.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>Why does binary use only 0 and 1?</summary><p>Binary is base 2, so only two digits (0 and 1) are valid — each position represents a power of 2, just as decimal digits represent powers of 10.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. All conversion happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Developer Utilities</h2>
+  <div class="related">
+    <a href="subnet-calculator.html">🌐 Subnet Calculator</a>
+    <a href="roman-numeral-converter.html">🏛️ Roman Numeral Converter</a>
+    <a href="statistics-calculator.html">📊 Statistics Calculator</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+const fields = {
+  dec: { el: document.getElementById('decField'), base: 10, regex: /^[0-9]+$/ },
+  bin: { el: document.getElementById('binField'), base: 2, regex: /^[01]+$/ },
+  oct: { el: document.getElementById('octField'), base: 8, regex: /^[0-7]+$/ },
+  hex: { el: document.getElementById('hexField'), base: 16, regex: /^[0-9a-fA-F]+$/ },
+};
+
+function updateFrom(key){
+  const errorMsg = document.getElementById('errorMsg');
+  const raw = fields[key].el.value.trim();
+  errorMsg.textContent = '';
+
+  if(raw === ''){ return; }
+
+  if(!fields[key].regex.test(raw)){
+    errorMsg.textContent = `Invalid digits for base ${fields[key].base}.`;
+    return;
+  }
+
+  let value;
+  try{
+    value = BigInt(key === 'hex' ? '0x'+raw : key === 'bin' ? '0b'+raw : key === 'oct' ? '0o'+raw : raw);
+  } catch(e){
+    errorMsg.textContent = 'Could not parse this number.';
+    return;
+  }
+
+  Object.keys(fields).forEach(k => {
+    if(k === key) return;
+    let out;
+    if(k === 'dec') out = value.toString(10);
+    else if(k === 'bin') out = value.toString(2);
+    else if(k === 'oct') out = value.toString(8);
+    else out = value.toString(16).toUpperCase();
+    fields[k].el.value = out;
+  });
+}
+
+Object.keys(fields).forEach(key => {
+  fields[key].el.addEventListener('input', () => updateFrom(key));
+});
+
+updateFrom('dec');
+</script>
+</body>
+</html>

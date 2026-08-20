@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contrast Checker | WCAG Color Contrast Ratio | ToolNest</title>
+<meta name="description" content="Check the color contrast ratio between two colors against WCAG accessibility standards instantly. Free, 100% client-side contrast checker.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/contrast-checker.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;--green:#16a34a;--red:#dc2626;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  .colors-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:600px){.colors-row{grid-template-columns:1fr;}}
+  .color-field{display:flex;align-items:center;gap:10px;}
+  input[type=color]{width:48px;height:40px;border:1px solid var(--line);border-radius:10px;padding:2px;background:#fff;cursor:pointer;}
+  input[type=text]{flex:1;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);}
+  input:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .field label{display:block;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+
+  .preview-box{
+    margin-top:20px;border-radius:12px;border:1px solid var(--line);padding:30px;text-align:center;
+  }
+  .preview-box .big-text{font-size:28px;font-weight:800;}
+  .preview-box .small-text{font-size:14px;margin-top:8px;}
+
+  .result-hero{margin-top:20px;background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:24px;text-align:center;}
+  .result-hero .ratio{font-size:40px;font-weight:800;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+  .result-hero .ratio-label{font-size:13px;color:var(--muted);margin-top:4px;}
+
+  .wcag-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px;}
+  @media (max-width:640px){.wcag-grid{grid-template-columns:repeat(2,1fr);}}
+  .wcag-card{border-radius:10px;padding:12px;text-align:center;border:1px solid var(--line);}
+  .wcag-card.pass{background:#dcfce7;border-color:#86efac;}
+  .wcag-card.fail{background:#fee2e2;border-color:#fca5a5;}
+  .wcag-card .label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;}
+  .wcag-card .status{font-size:16px;font-weight:800;margin-top:4px;}
+  .wcag-card.pass .status{color:var(--green);} .wcag-card.fail .status{color:var(--red);}
+
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">🖼️ Image &amp; Design Tools</a> / <strong>Contrast Checker</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🔲</div>
+    <div><h1>Contrast Checker</h1><p>Check the color contrast ratio between two colors against WCAG accessibility standards. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <div class="colors-row">
+      <div class="field">
+        <label>Text Color</label>
+        <div class="color-field">
+          <input type="color" id="fgPicker" value="#0f172a">
+          <input type="text" id="fgHex" value="#0F172A">
+        </div>
+      </div>
+      <div class="field">
+        <label>Background Color</label>
+        <div class="color-field">
+          <input type="color" id="bgPicker" value="#ffffff">
+          <input type="text" id="bgHex" value="#FFFFFF">
+        </div>
+      </div>
+    </div>
+
+    <div class="preview-box" id="previewBox">
+      <div class="big-text" id="bigText">Large Text Example</div>
+      <div class="small-text" id="smallText">Regular body text example for readability.</div>
+    </div>
+
+    <div class="result-hero">
+      <div class="ratio" id="ratioValue">18.1:1</div>
+      <div class="ratio-label">Contrast Ratio</div>
+    </div>
+
+    <div class="wcag-grid" id="wcagGrid"></div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Live Checking</h3><p>The contrast ratio updates instantly as you pick colors.</p></div>
+    <div class="feature"><h3>✅ WCAG Standards</h3><p>Checks against AA and AAA levels for both normal and large text.</p></div>
+    <div class="feature"><h3>👀 Live Preview</h3><p>See exactly how the text looks on the chosen background.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All calculation happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Contrast Checker</h2>
+  <ol class="steps">
+    <li><strong>Pick a text color:</strong> Use the color picker or type a HEX value.</li>
+    <li><strong>Pick a background color:</strong> Same options apply.</li>
+    <li><strong>Check the ratio:</strong> See whether it passes WCAG AA/AAA for normal and large text.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>What contrast ratio do I need?</summary><p>WCAG AA requires at least 4.5:1 for normal text and 3:1 for large text; AAA requires 7:1 and 4.5:1 respectively, for stronger accessibility.</p></details>
+    <details><summary>What counts as "large text"?</summary><p>Text at 18pt (24px) regular weight or 14pt (18.66px) bold or larger is considered large text under WCAG guidelines.</p></details>
+    <details><summary>Is my data sent to a server?</summary><p>No. All calculation happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Image &amp; Design Tools</h2>
+  <div class="related">
+    <a href="color-format-converter.html">🎨 Color Format Converter</a>
+    <a href="color-blindness-simulator.html">👁️ Color Blindness Simulator</a>
+    <a href="palette-generator.html">🎨 Color Palette Generator</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+function hexToRgb(hex){
+  const h = hex.replace('#','');
+  const full = h.length === 3 ? h.split('').map(c=>c+c).join('') : h;
+  return [parseInt(full.substring(0,2),16), parseInt(full.substring(2,4),16), parseInt(full.substring(4,6),16)];
+}
+
+function relativeLuminance(r,g,b){
+  const [rs,gs,bs] = [r,g,b].map(v => {
+    v /= 255;
+    return v <= 0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055, 2.4);
+  });
+  return 0.2126*rs + 0.7152*gs + 0.0722*bs;
+}
+
+function contrastRatio(hex1, hex2){
+  const [r1,g1,b1] = hexToRgb(hex1);
+  const [r2,g2,b2] = hexToRgb(hex2);
+  const l1 = relativeLuminance(r1,g1,b1);
+  const l2 = relativeLuminance(r2,g2,b2);
+  const lighter = Math.max(l1,l2);
+  const darker = Math.min(l1,l2);
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+function isValidHex(hex){
+  return /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(hex);
+}
+
+function update(){
+  const fg = document.getElementById('fgHex').value.trim();
+  const bg = document.getElementById('bgHex').value.trim();
+
+  if(!isValidHex(fg) || !isValidHex(bg)) return;
+
+  document.getElementById('fgPicker').value = fg.length===4 ? '#'+fg.slice(1).split('').map(c=>c+c).join('') : fg;
+  document.getElementById('bgPicker').value = bg.length===4 ? '#'+bg.slice(1).split('').map(c=>c+c).join('') : bg;
+
+  const previewBox = document.getElementById('previewBox');
+  previewBox.style.background = bg;
+  previewBox.style.color = fg;
+
+  const ratio = contrastRatio(fg, bg);
+  document.getElementById('ratioValue').textContent = ratio.toFixed(2) + ':1';
+
+  const checks = [
+    { label: 'AA Normal Text', min: 4.5 },
+    { label: 'AA Large Text', min: 3 },
+    { label: 'AAA Normal Text', min: 7 },
+    { label: 'AAA Large Text', min: 4.5 },
+  ];
+
+  document.getElementById('wcagGrid').innerHTML = checks.map(c => {
+    const pass = ratio >= c.min;
+    return `<div class="wcag-card ${pass?'pass':'fail'}"><div class="label">${c.label}</div><div class="status">${pass ? '✓ Pass' : '✗ Fail'}</div></div>`;
+  }).join('');
+}
+
+document.getElementById('fgPicker').addEventListener('input', e => {
+  document.getElementById('fgHex').value = e.target.value.toUpperCase();
+  update();
+});
+document.getElementById('bgPicker').addEventListener('input', e => {
+  document.getElementById('bgHex').value = e.target.value.toUpperCase();
+  update();
+});
+document.getElementById('fgHex').addEventListener('input', update);
+document.getElementById('bgHex').addEventListener('input', update);
+
+update();
+</script>
+</body>
+</html>

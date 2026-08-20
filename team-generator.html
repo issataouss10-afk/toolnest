@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLN0M7YFJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4RLN0M7YFJ');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Team Generator | Split a List Into Teams | ToolNest</title>
+<meta name="description" content="Paste a list of names and instantly split them into random, balanced teams or groups. Free, 100% client-side random team generator.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://toolnest-jet.vercel.app/team-generator.html">
+<meta name="theme-color" content="#2563eb">
+<style>
+  :root{--blue:#2563eb;--blue-dark:#1d4ed8;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--bg:#f8fafc;--card:#ffffff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;}
+  a{color:var(--blue);text-decoration:none;} a:hover{text-decoration:underline;}
+  header.site{background:#fff;border-bottom:1px solid var(--line);}
+  .site-inner{max-width:1040px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{font-weight:800;font-size:18px;color:var(--ink);}
+  nav.site a{margin-left:20px;color:var(--muted);font-weight:500;font-size:14px;} nav.site a:hover{color:var(--ink);}
+  .wrap{max-width:1040px;margin:0 auto;padding:24px 20px 60px;}
+  .crumb{font-size:13px;color:var(--muted);margin-bottom:18px;} .crumb strong{color:var(--ink);}
+  .ad{background:#f1f5f9;border:1px dashed var(--line);color:#94a3b8;font-size:12px;text-align:center;padding:14px;border-radius:10px;margin:20px 0;}
+  .hero{display:flex;align-items:flex-start;gap:16px;margin-bottom:8px;}
+  .hero .icon{font-size:34px;background:#eef2ff;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:14px;flex-shrink:0;}
+  .hero h1{margin:4px 0 6px;font-size:28px;} .hero p{margin:0;color:var(--muted);font-size:15px;max-width:640px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-top:22px;box-shadow:0 1px 2px rgba(15,23,42,.04);}
+  textarea{width:100%;min-height:160px;padding:14px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink);resize:vertical;}
+  textarea:focus{outline:2px solid var(--blue);outline-offset:1px;}
+  .controls-row{display:flex;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap;}
+  .controls-row label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;}
+  .controls-row input[type=number]{width:90px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px;}
+  .generate-btn{background:var(--blue);color:#fff;border:none;padding:11px 20px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;}
+  .generate-btn:hover{background:var(--blue-dark);}
+  .teams-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:14px;margin-top:20px;}
+  .team-card{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .team-card h3{margin:0 0 10px;font-size:14px;color:var(--blue-dark);}
+  .team-card ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink);}
+  .team-card li{margin-bottom:4px;}
+  .error{color:#dc2626;font-size:13px;margin-top:8px;min-height:16px;}
+  .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px;}
+  @media (max-width:720px){.features{grid-template-columns:1fr;}}
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .feature h3{margin:0 0 6px;font-size:14px;} .feature p{margin:0;font-size:13px;color:var(--muted);}
+  h2.section-title{font-size:19px;margin:36px 0 14px;}
+  .steps{padding-left:20px;color:var(--muted);font-size:14px;} .steps li{margin-bottom:6px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px;}
+  .faq summary{font-weight:600;font-size:14px;cursor:pointer;} .faq p{margin:8px 0 0;color:var(--muted);font-size:13.5px;}
+  .related{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}
+  .related a{background:#f1f5f9;padding:8px 14px;border-radius:999px;font-size:13px;color:var(--ink);font-weight:500;}
+  .related a:hover{background:#e2e8f0;text-decoration:none;}
+  footer.site{border-top:1px solid var(--line);margin-top:40px;padding:24px 20px;text-align:center;font-size:13px;color:var(--muted);}
+  footer.site a{margin:0 8px;color:var(--muted);}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner"><div class="brand">🪶 ToolNest</div>
+<nav class="site"><a href="/">Home</a><a href="/about.html">About</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="/">Home</a> / <a href="/">⚡ Productivity Tools</a> / <strong>Random Team Generator</strong></div>
+  <div class="ad">Advertisement Area (Top Banner)</div>
+  <div class="hero">
+    <div class="icon">🎲</div>
+    <div><h1>Random Team Generator</h1><p>Paste a list of names and split them into random, balanced teams instantly. 100% local — nothing leaves your browser.</p></div>
+  </div>
+
+  <div class="panel">
+    <textarea id="namesInput">Alice
+Bob
+Carla
+David
+Emma
+Frank
+Grace
+Henry</textarea>
+
+    <div class="controls-row">
+      <label for="teamCount">Number of Teams</label>
+      <input type="number" id="teamCount" min="2" max="20" value="2">
+      <button class="generate-btn" onclick="generateTeams()">🎲 Shuffle Teams</button>
+    </div>
+    <div class="error" id="errorMsg"></div>
+
+    <div class="teams-grid" id="teamsGrid"></div>
+  </div>
+
+  <div class="features">
+    <div class="feature"><h3>⚡ Instant Shuffling</h3><p>Names are randomly assigned to teams using your browser's secure random source.</p></div>
+    <div class="feature"><h3>⚖️ Balanced Groups</h3><p>Teams are kept as evenly sized as possible, even with an uneven number of names.</p></div>
+    <div class="feature"><h3>🔁 Reshuffle Anytime</h3><p>Click Shuffle again for a completely new random grouping.</p></div>
+    <div class="feature"><h3>🔒 100% Local</h3><p>All processing happens in your browser's memory. Nothing is uploaded or logged.</p></div>
+  </div>
+
+  <h2 class="section-title">How to Use ToolNest Random Team Generator</h2>
+  <ol class="steps">
+    <li><strong>Paste your names:</strong> One name per line.</li>
+    <li><strong>Set the number of teams:</strong> Choose how many groups you need.</li>
+    <li><strong>Shuffle:</strong> Click Shuffle Teams to see the random grouping.</li>
+  </ol>
+
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq">
+    <details><summary>What happens if names don't divide evenly?</summary><p>Extra names are distributed one at a time across teams, so team sizes never differ by more than one person.</p></details>
+    <details><summary>Is my list of names sent to a server?</summary><p>No. All shuffling happens entirely client-side in your browser.</p></details>
+  </div>
+
+  <h2 class="section-title">Related Productivity Tools</h2>
+  <div class="related">
+    <a href="random-number-generator.html">🎲 Random Number Generator</a>
+    <a href="line-sorter.html">🧹 Duplicate Line Remover & Sorter</a>
+    <a href="wifi-qr-generator.html">📶 WiFi QR Code Generator</a>
+  </div>
+  <div class="ad">Advertisement Area (Bottom Banner)</div>
+</div>
+
+<footer class="site">
+  <a href="/about.html">About Us</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="/contact.html">Contact</a>
+  <div style="margin-top:8px;">© 2026 ToolNest. All rights reserved. Fast, secure, client-side web tools.</div>
+</footer>
+
+<script>
+function secureRandomInt(max){
+  const arr = new Uint32Array(1);
+  crypto.getRandomValues(arr);
+  return arr[0] % max;
+}
+
+function shuffle(arr){
+  const result = [...arr];
+  for(let i = result.length - 1; i > 0; i--){
+    const j = secureRandomInt(i + 1);
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+function generateTeams(){
+  const names = document.getElementById('namesInput').value
+    .split('\n').map(n => n.trim()).filter(Boolean);
+  const teamCount = Math.max(2, Math.min(20, parseInt(document.getElementById('teamCount').value, 10) || 2));
+  const errorMsg = document.getElementById('errorMsg');
+
+  if(names.length === 0){
+    errorMsg.textContent = 'Add at least one name.';
+    document.getElementById('teamsGrid').innerHTML = '';
+    return;
+  }
+  if(names.length < teamCount){
+    errorMsg.textContent = `You have ${names.length} names but requested ${teamCount} teams.`;
+  } else {
+    errorMsg.textContent = '';
+  }
+
+  const shuffled = shuffle(names);
+  const teams = Array.from({length: teamCount}, () => []);
+  shuffled.forEach((name, i) => {
+    teams[i % teamCount].push(name);
+  });
+
+  document.getElementById('teamsGrid').innerHTML = teams.map((team, i) => `
+    <div class="team-card">
+      <h3>Team ${i+1} (${team.length})</h3>
+      <ul>${team.map(n => `<li>${n}</li>`).join('')}</ul>
+    </div>
+  `).join('');
+}
+
+generateTeams();
+</script>
+</body>
+</html>
